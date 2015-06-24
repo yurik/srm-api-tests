@@ -18,7 +18,7 @@
 		"87784063-e1cf-b2a8-f24f-e918faf92d1e",
 		"b8f74877-e005-b415-5ca7-ab4dc293fc4a",
 		"7fad602f-5152-77b2-30db-0108aee1aaf6",
-		"54742735-6e02-dba5-9d29-fa0b9df6687e",
+		"38f5832b-2e25-15fc-66fa-a1784de4fc64",
 		"85995a7d-3477-2e07-bf71-35371c4d45ba",
 		"44940dc7-6860-1d0a-5303-8547c558007a"
 	],
@@ -33,79 +33,66 @@
 	"requests": [
 		{
 			"id": "0d972ea5-2ca3-ccdf-0e19-1d1be77b20db",
-			"name": "401 Unauthorized publish",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
 			"headers": "Authorization: Bearer f2e7b329daaae2212f9623719e17db2d789fe90d7463f2255af0523111748e4c\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Status 401\"] = data.status === 401;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2\";\ntests[\"Error title OK\"] = data.title === \"Unauthorized.\";\ntests[\"Error detail OK\"] = data.detail === \"The user credentials provided with the request are invalid or do not provide the necessary level of access.\";\ntests[\"Error status OK\"] = data.status === 401;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512612,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-28T21:23:18.000Z",
-			"updatedAt": "2015-05-28T21:23:18.000Z",
+			"helperAttributes": {},
+			"time": 1435169064047,
+			"name": "401 Unauthorized publish",
+			"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
-					"owner": "49600",
-					"lastUpdatedBy": "49600",
-					"lastRevision": 6512618,
-					"request": null,
-					"id": "7060b7ba-ecd6-7a7f-9dba-c39fb3b63205",
-					"name": "Sample response",
 					"status": "",
 					"responseCode": {
 						"code": 401,
-						"name": "Unauthorized"
+						"name": "Unauthorized",
+						"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
 					},
-					"time": "2040",
+					"time": 1160,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
+							"value": "close",
+							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
 							"value": "application/vnd.oracle.resource+json; type=error",
-							"description": ""
+							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Thu, 28 May 2015 19:07:54 GMT",
-							"description": ""
+							"value": "Wed, 24 Jun 2015 18:04:08 GMT",
+							"description": "The date and time that the message was sent"
 						},
 						{
 							"name": "Server",
 							"key": "Server",
 							"value": "nginx/1.4.2",
-							"description": ""
+							"description": "A name for the server"
 						},
 						{
 							"name": "Status",
 							"key": "Status",
 							"value": "401 Unauthorized",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "Transfer-Encoding",
 							"key": "Transfer-Encoding",
 							"value": "chunked",
-							"description": ""
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						}
 					],
 					"cookies": [],
@@ -117,14 +104,75 @@
 						"size": "normal"
 					},
 					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": null,
-					"createdAt": "2015-05-28T21:23:18.000Z",
-					"updatedAt": "2015-05-28T21:23:18.000Z",
-					"write": true
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "61ccec6d-7fbd-d241-4112-1b94637f8228",
+					"name": "Sample response",
+					"request": {
+						"name": "401 Unauthorized publish",
+						"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
+						"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: Bearer f2e7b329daaae2212f9623719e17db2d789fe90d7463f2255af0523111748e4c\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2\";\ntests[\"Error title OK\"] = data.title === \"Unauthorized.\";\ntests[\"Error detail OK\"] = data.detail === \"The user credentials provided with the request are invalid or do not provide the necessary level of access.\";\ntests[\"Error status OK\"] = data.status === 401;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "0d972ea5-2ca3-ccdf-0e19-1d1be77b20db",
+						"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 401 Unauthorized": true,
+							"Error type OK": true,
+							"Error title OK": true,
+							"Error detail OK": true,
+							"Error status OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
+			"synced": false
+		},
+		{
+			"id": "38f5832b-2e25-15fc-66fa-a1784de4fc64",
+			"name": "501 Not Implemented(no reproducible case)",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "The request functionality has not be implemented. Endpoint is not fully implemented.",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts",
+			"preRequestScript": "",
+			"tests": "//Verifying response code\n//tests[\"Status code is 502 SRM API server error\"] = responseCode.code === 502;\n\n//Verifying response data\n",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512671,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-13T18:39:06.000Z",
+			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
+			"collectionOwner": 0,
 			"synced": false
 		},
 		{
@@ -137,41 +185,32 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 202 Created\"] = responseCode.code === 202;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content\"] = responseCode.code === 204;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1433877866087,
+			"time": 1435170002948,
 			"name": "204 No Content",
 			"description": "The request returned no content.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
-			"owner": "49600",
 			"synced": false,
 			"rawModeData": ""
 		},
 		{
 			"id": "4c29f684-19ab-0d4c-85b8-c8b8b3d9d476",
-			"name": "403 Request is forbidden (no access to bundle)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "An error occurred executing the request.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/bundles/8699",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 403 Request is forbidden\"] = responseCode.code === 403;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Status 403\"] = data.status === 403;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 403 Forbidden\"] = responseCode.code === 403;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4\";\ntests[\"Error title OK\"] = data.title === \"Request is forbidden.\";\ntests[\"Error detail OK\"] = data.detail === \"An error occurred executing the request:  \";\ntests[\"Error status OK\"] = data.status === 403;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512623,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-28T21:23:18.000Z",
-			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"helperAttributes": {},
+			"time": 1435169161556,
+			"name": "403 Request is forbidden (no access to bundle)",
+			"description": "An error occurred executing the request.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -289,28 +328,20 @@
 		},
 		{
 			"id": "50141e33-01f2-0a4b-eec3-ec9e2193e043",
-			"name": "404 Not Found",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The desired route is not available for the specified HTTP method.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/INVALID_ENDPOINT?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\";\ntests[\"Error title OK\"] = data.title === \"Unknown url/method combination.\";\ntests[\"Error detail OK\"] = data.detail === \"The desired route [https://public-api.vitrue.com/engage/v1/INVALID_ENDPOINT?bundleId=16415] is not available for the specified HTTP method [GET].\";\ntests[\"Error status OK\"] = data.status === 404;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512632,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:31:00.000Z",
-			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"helperAttributes": {},
+			"time": 1435169320258,
+			"name": "404 Not Found",
+			"description": "The desired route is not available for the specified HTTP method.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -320,18 +351,18 @@
 						"name": "Not Found",
 						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
 					},
-					"time": 257,
+					"time": 780,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Length",
 							"key": "Content-Length",
-							"value": "297",
+							"value": "287",
 							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
@@ -343,7 +374,7 @@
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 09 Jun 2015 20:32:31 GMT",
+							"value": "Wed, 24 Jun 2015 18:07:17 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -385,7 +416,7 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "895",
+							"value": "894",
 							"description": "Custom header"
 						},
 						{
@@ -397,7 +428,7 @@
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"type\":\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\",\"title\":\"Unknown url/method combination.\",\"detail\":\"The desired route [https://srm-api.staging.cloud.vitrue.com/engage/v1/INVALID_ENDPOINT?bundleId=9059] is not available for the specified HTTP method [GET].\",\"status\":404}",
+					"text": "{\"type\":\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\",\"title\":\"Unknown url/method combination.\",\"detail\":\"The desired route [https://public-api.vitrue.com/engage/v1/INVALID_ENDPOINT?bundleId=16415] is not available for the specified HTTP method [GET].\",\"status\":404}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -411,7 +442,7 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "9492d7ae-69a3-3160-9450-a7f55213a45f",
+					"id": "b882e1da-da6e-2d66-a1ec-27e5eef2e2f5",
 					"name": "Sample response",
 					"request": {
 						"name": "404 Not Found",
@@ -422,7 +453,7 @@
 						"headers": "Authorization: {{auth_token}}\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\";\ntests[\"Error title OK\"] = data.title === \"Unknown url/method combination.\";\ntests[\"Error detail OK\"] = data.detail === \"The desired route [https://public-api.vitrue.com/engage/v1/INVALID_ENDPOINT?bundleId=16415] is not available for the specified HTTP method [GET].\";\ntests[\"Error status OK\"] = data.status === 404;",
 						"isFromCollection": true,
 						"write": true,
 						"version": 2,
@@ -431,68 +462,39 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 404 Not Found": true
+							"Status code is 404 Not Found": true,
+							"Error type OK": true,
+							"Error title OK": true,
+							"Error detail OK": true,
+							"Error status OK": true
 						},
 						"testErrors": null,
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
-						}
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
 			"synced": false
 		},
 		{
-			"id": "54742735-6e02-dba5-9d29-fa0b9df6687e",
-			"name": "501 Not implemented error WIP",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The requested functionality has not been implemented.",
-			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{engage_gk}}/metadata-catalog/messages?bundleId={{bundle_id}}",
-			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 501 Not implemented error\"] = responseCode.code === 501;\n\n//Verifying response data\n",
-			"version": 2,
-			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512641,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:39:05.000Z",
-			"updatedAt": "2015-05-28T21:23:20.000Z",
-			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
-			"synced": false
-		},
-		{
 			"id": "741cac46-4a05-5b8b-6c17-d511510ac8ea",
-			"name": "202 Accepted",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "The resource was asynchronously created.",
 			"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 202 Created\"] = responseCode.code === 202;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Created\"] = responseCode.code === 202;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512649,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:22:29.000Z",
-			"updatedAt": "2015-05-28T21:23:20.000Z",
+			"helperAttributes": {},
+			"time": 1435168631767,
+			"name": "202 Accepted",
+			"description": "The resource was asynchronously created.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -502,30 +504,30 @@
 						"name": "Accepted",
 						"detail": "The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place."
 					},
-					"time": 392,
+					"time": 1109,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Length",
 							"key": "Content-Length",
-							"value": "137",
+							"value": "129",
 							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "text/html;charset=utf-8",
+							"value": "application/vnd.oracle.resource+json; type=collection",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 09 Jun 2015 20:31:27 GMT",
+							"value": "Wed, 24 Jun 2015 17:47:25 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -547,12 +549,6 @@
 							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
 						},
 						{
-							"name": "X-Frame-Options",
-							"key": "X-Frame-Options",
-							"value": "SAMEORIGIN",
-							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-						},
-						{
 							"name": "X-RateLimit-Limit",
 							"key": "X-RateLimit-Limit",
 							"value": "900",
@@ -561,20 +557,14 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "898",
+							"value": "882",
 							"description": "Custom header"
-						},
-						{
-							"name": "X-XSS-Protection",
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"description": "Cross-site scripting (XSS) filter"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"items\":[{\"id\":\"77962_9775\"}],\"links\":[{\"rel\":\"self\",\"href\":\"https://gatekeeper.staging.cloud.vitrue.com/publish/v1/posts/77962_9775\"}]}",
-					"language": "html",
+					"text": "{\"items\":[{\"id\":\"1881083_33268\"}],\"links\":[{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1881083_33268\"}]}",
+					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
 						"size": "normal"
@@ -587,7 +577,7 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "0903baac-4062-a977-6cd8-036ff1a4ad69",
+					"id": "76ea5a6a-f643-3ba9-1c5e-f4ce8c51b427",
 					"name": "Sample response",
 					"request": {
 						"name": "202 Accepted",
@@ -613,36 +603,30 @@
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
-						}
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
 			"synced": false,
-			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing post with no action - will publish immediatelly \",\n         \"message\":\"Hello, world I'm publishing\"\n      }\n   ,\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      }\n   ]\n}"
+			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing post with no action - will publish immediatelly {{$timestamp}}\",\n         \"message\":\"Hello, world I'm publishing {{$timestamp}}\"\n      }\n   ,\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      }\n   ]\n}"
 		},
 		{
 			"id": "7a48734a-e770-31d7-740e-bfba5dd9ddfd",
-			"name": "400 Bad Request",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "Bad request. (Malformed JSON)",
 			"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages/{{message_id_own}}/replies?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 400 Bad Request\"] = responseCode.code === 400;\n\n//Verifying response data\n\n\ntests[\"Malformed JSON\"] = responseBody === \"Invalid JSON\";",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 400 Bad Request\"] = responseCode.code === 400;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.3\";\ntests[\"Error title OK\"] = data.title === \"Bad Request.\";\ntests[\"Error detail OK\"] = data.detail === \"The request cannot be processed due to an error in the provided data: Invalid JSON\";\ntests[\"Error status OK\"] = data.status === 400;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512659,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:25:10.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435168339617,
+			"name": "400 Bad Request",
+			"description": "Bad request. (Malformed JSON)",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -761,28 +745,20 @@
 		},
 		{
 			"id": "7fad602f-5152-77b2-30db-0108aee1aaf6",
-			"name": "500 Internal Server Error",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"report_name\":\"Testing post with no action - will publish immediatelly \",\n         \"message\":\"Hello, world I'm publishing\"\n      }\n   ,\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      }\n   ]\n}",
-			"descriptionFormat": null,
-			"description": "An unexpected error occurred processing the request.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages?bundleId=INVALID_BUNDLE",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 500 Internal Server Error\"] = responseCode.code === 500;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 500 Internal Server Error\"] = responseCode.code === 500;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1\";\ntests[\"Error title OK\"] = data.title === \"Internal server error.\";\ntests[\"Error status OK\"] = data.status === 500;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512665,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:37:15.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435169658675,
+			"name": "500 Internal Server Error",
+			"description": "An unexpected error occurred processing the request.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -899,7 +875,7 @@
 		},
 		{
 			"id": "85995a7d-3477-2e07-bf71-35371c4d45ba",
-			"name": "502 SRM API server error WIP",
+			"name": "502 SRM API server error(no reproducible case)",
 			"dataMode": "params",
 			"data": [],
 			"rawModeData": null,
@@ -926,27 +902,20 @@
 		},
 		{
 			"id": "87784063-e1cf-b2a8-f24f-e918faf92d1e",
-			"name": "422 Unprocessable entity/resource",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "The entity or resource identified in the request either does not exist or is otherwise unprocessable.",
 			"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages/{{message_id_own}}/replies?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 422 Unprocessable entity or resource\"] = responseCode.code === 422;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 422 Unprocessable entity or resource\"] = responseCode.code === 422;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"https://tools.ietf.org/html/rfc4918#section-11.2\";\ntests[\"Error title OK\"] = data.title === \"Unprocessable entity or resource\";\ntests[\"Error detail OK\"] = data.detail === \"The entity or resource identified in the request either does not exist or is otherwise unprocessable:  \";\ntests[\"Error status OK\"] = data.status === 422;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512686,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:35:44.000Z",
-			"updatedAt": "2015-05-28T21:23:22.000Z",
+			"helperAttributes": {},
+			"time": 1435169547559,
+			"name": "422 Unprocessable entity/resource",
+			"description": "The entity or resource identified in the request either does not exist or is otherwise unprocessable.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1064,142 +1033,151 @@
 		},
 		{
 			"id": "9fec7552-013b-c9a1-a984-2630b7431b4b",
-			"name": "200 OK",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The request was successful.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512696,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:05:49.000Z",
-			"updatedAt": "2015-05-28T21:23:22.000Z",
+			"helperAttributes": {},
+			"time": 1435168036333,
+			"name": "200 OK",
+			"description": "The request was successful.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
-					"owner": "49600",
-					"lastUpdatedBy": "49600",
-					"lastRevision": 6512704,
-					"request": null,
-					"id": "33bf9a5e-16a0-a338-7849-d24558bd090f",
-					"name": "Sample response",
 					"status": "",
 					"responseCode": {
 						"code": 200,
-						"name": "OK"
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": "1787",
+					"time": 1287,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
+							"value": "close",
+							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Length",
 							"key": "Content-Length",
-							"value": "5372",
-							"description": ""
+							"value": "2483",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
 							"value": "application/vnd.oracle.resource+json; type=collection",
-							"description": ""
+							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Thu, 28 May 2015 20:32:39 GMT",
-							"description": ""
+							"value": "Wed, 24 Jun 2015 17:47:02 GMT",
+							"description": "The date and time that the message was sent"
 						},
 						{
 							"name": "Server",
 							"key": "Server",
 							"value": "nginx/1.4.2",
-							"description": ""
+							"description": "A name for the server"
 						},
 						{
 							"name": "Status",
 							"key": "Status",
 							"value": "200 OK",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-Content-Type-Options",
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
-							"description": ""
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
 						},
 						{
 							"name": "X-RateLimit-Limit",
 							"key": "X-RateLimit-Limit",
 							"value": "900",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "899",
-							"description": ""
+							"value": "883",
+							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"name\":\"#2 ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4398\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4398\"}],\"bundleId\":4398},{\"name\":\"#3 ENGAGE enabled account\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4548\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4548\"}],\"bundleId\":4548},{\"name\":\"#ODC QA acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5437\"}],\"bundleId\":5437},{\"name\":\"#zerotolerance\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5034\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5034\"}],\"bundleId\":5034},{\"name\":\"All features QA Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5578\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5578\"}],\"bundleId\":5578},{\"name\":\"broker_qa\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7265\"}],\"bundleId\":7265},{\"name\":\"ENGAGE SHARDING QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9424\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9424\"}],\"bundleId\":9424},{\"name\":\"Engage Sharding QA test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10208\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10208\"}],\"bundleId\":10208},{\"name\":\"Engage-Listen-Integrated-Acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7201\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7201\"}],\"bundleId\":7201},{\"name\":\"ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4387\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4387\"}],\"bundleId\":4387},{\"name\":\"ENGAGE_ONLY_ACCT #3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4419\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4419\"}],\"bundleId\":4419},{\"name\":\"Legacy_Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/8228\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/8228\"}],\"bundleId\":8228},{\"name\":\"NEW SHARD QA TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9488\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9488\"}],\"bundleId\":9488},{\"name\":\"NEW-QA-UCF-STAGE\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5902\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/5902\"}],\"bundleId\":5902},{\"name\":\"ODC-ENGAGE ACCT \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/8532\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/8532\"}],\"bundleId\":8532},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/1843\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/1843\"}],\"bundleId\":1843},{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"bundleId\":9059},{\"name\":\"QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4341\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4341\"}],\"bundleId\":4341},{\"name\":\"QA DBInbox acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9454\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9454\"}],\"bundleId\":9454},{\"name\":\"QA Internal Test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4343\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/4343\"}],\"bundleId\":4343}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"next\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts?offset=20&limit=20\"}]}",
+					"text": "{\"count\":10,\"hasMore\":false,\"items\":[{\"name\":\"3D TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11232\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11232\"}],\"bundleId\":11232},{\"name\":\"CH3-QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11513\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11513\"}],\"bundleId\":11513},{\"name\":\"China QA Automation\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15338\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15338\"}],\"bundleId\":15338},{\"name\":\"ENGAGE QA ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/8881\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/8881\"}],\"bundleId\":8881},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/6354\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/6354\"}],\"bundleId\":6354},{\"name\":\"POST SHARDING QA ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/17514\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/17514\"}],\"bundleId\":17514},{\"name\":\"Public API QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16415\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16415\"}],\"bundleId\":16415},{\"name\":\"SRM-ODC acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15016\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15016\"}],\"bundleId\":15016},{\"name\":\"Test QA \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/9941\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/9941\"}],\"bundleId\":9941},{\"name\":\"TEST QA POST ODC\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/19517\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/19517\"}],\"bundleId\":19517}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
 						"size": "normal"
 					},
 					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": null,
-					"createdAt": "2015-05-28T21:23:23.000Z",
-					"updatedAt": "2015-05-28T21:23:23.000Z",
-					"write": true
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "3a410470-9827-0bfa-ab48-4c3b12791af7",
+					"name": "Sample response",
+					"request": {
+						"name": "200 OK",
+						"description": "The request was successful.",
+						"url": "{{accounts_gk}}/accounts",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"isFromCollection": true,
+						"write": true,
+						"version": 2,
+						"id": "9fec7552-013b-c9a1-a984-2630b7431b4b",
+						"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
 			"synced": false
 		},
 		{
 			"id": "b8f74877-e005-b415-5ca7-ab4dc293fc4a",
-			"name": "422 Unprocessable entity/resource copy",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "The entity or resource identified in the request either does not exist or is otherwise unprocessable.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "PUT",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages/{{message_id_own}}?bundleId={{bundle_id}}&status=INVALID_STATUS",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 422 Unprocessable entity or resource\"] = responseCode.code === 422;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 422 Unprocessable entity or resource\"] = responseCode.code === 422;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"https://tools.ietf.org/html/rfc4918#section-11.2\";\ntests[\"Error title OK\"] = data.title === \"Unprocessable entity or resource\";\ntests[\"Error detail OK\"] = data.detail === \"The entity or resource identified in the request either does not exist or is otherwise unprocessable: {\\\"errors\\\":[\\\"Status is not included in the list\\\"]}\";\ntests[\"Error status OK\"] = data.status === 422;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512711,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T22:08:17.000Z",
-			"updatedAt": "2015-05-28T21:23:24.000Z",
+			"helperAttributes": {},
+			"time": 1435169586143,
+			"name": "422 Unprocessable entity/resource copy",
+			"description": "The entity or resource identified in the request either does not exist or is otherwise unprocessable.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1312,83 +1290,71 @@
 					}
 				}
 			],
-			"synced": false
+			"synced": false,
+			"rawModeData": ""
 		},
 		{
 			"id": "bfe93ca9-7b6a-143c-3bbc-1859dcad2708",
-			"name": "401 Unauthorized engage",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
 			"headers": "Authorization: Bearer f2e7b329daaae2212f9623719e17db2d789fe90d7463f2255af0523111748e4c\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Status 401\"] = data.status === 401;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2\";\ntests[\"Error title OK\"] = data.title === \"Unauthorized.\";\ntests[\"Error detail OK\"] = data.detail === \"The user credentials provided with the request are invalid or do not provide the necessary level of access.\";\ntests[\"Error status OK\"] = data.status === 401;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512721,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-11T18:13:34.000Z",
-			"updatedAt": "2015-05-28T21:23:24.000Z",
+			"helperAttributes": {},
+			"time": 1435168821546,
+			"name": "401 Unauthorized engage",
+			"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
-					"owner": "49600",
-					"lastUpdatedBy": "49600",
-					"lastRevision": 6512730,
-					"request": null,
-					"id": "7ca5b68a-4d96-8cac-8f40-34338753e606",
-					"name": "Sample response",
 					"status": "",
 					"responseCode": {
 						"code": 401,
-						"name": "Unauthorized"
+						"name": "Unauthorized",
+						"detail": "Similar to 403 Forbidden, but specifically for use when authentication is possible but has failed or not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource."
 					},
-					"time": "2040",
+					"time": 1536,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
+							"value": "close",
+							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
 							"value": "application/vnd.oracle.resource+json; type=error",
-							"description": ""
+							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Thu, 28 May 2015 19:07:54 GMT",
-							"description": ""
+							"value": "Wed, 24 Jun 2015 18:03:56 GMT",
+							"description": "The date and time that the message was sent"
 						},
 						{
 							"name": "Server",
 							"key": "Server",
 							"value": "nginx/1.4.2",
-							"description": ""
+							"description": "A name for the server"
 						},
 						{
 							"name": "Status",
 							"key": "Status",
 							"value": "401 Unauthorized",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "Transfer-Encoding",
 							"key": "Transfer-Encoding",
 							"value": "chunked",
-							"description": ""
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						}
 					],
 					"cookies": [],
@@ -1400,39 +1366,65 @@
 						"size": "normal"
 					},
 					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": null,
-					"createdAt": "2015-05-28T21:23:25.000Z",
-					"updatedAt": "2015-05-28T21:23:25.000Z",
-					"write": true
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "d7fcc8a3-0375-b179-58f1-4e614c2631e4",
+					"name": "Sample response",
+					"request": {
+						"name": "401 Unauthorized engage",
+						"description": "The user credentials provided with the request are invalid or do not provide the necessary level of access.",
+						"url": "{{engage_gk}}/messages?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: Bearer f2e7b329daaae2212f9623719e17db2d789fe90d7463f2255af0523111748e4c\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2\";\ntests[\"Error title OK\"] = data.title === \"Unauthorized.\";\ntests[\"Error detail OK\"] = data.detail === \"The user credentials provided with the request are invalid or do not provide the necessary level of access.\";\ntests[\"Error status OK\"] = data.status === 401;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "bfe93ca9-7b6a-143c-3bbc-1859dcad2708",
+						"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 401 Unauthorized": true,
+							"Error type OK": true,
+							"Error title OK": true,
+							"Error detail OK": true,
+							"Error status OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
 			"synced": false
 		},
 		{
 			"id": "d92f33cf-18b2-56bd-fa01-ca4a6c9310d1",
-			"name": "201 Created",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "The resource was successfully created.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "POST",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages/{{message_id_own}}/replies?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 201 Created\"] = responseCode.code === 201;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 201 Created\"] = responseCode.code === 201;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Reply status active\"] = data.status === \"active\";",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512734,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:08:31.000Z",
-			"updatedAt": "2015-05-28T21:23:25.000Z",
+			"helperAttributes": {},
+			"time": 1435168555021,
+			"name": "201 Created",
+			"description": "The resource was successfully created.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1548,32 +1540,24 @@
 				}
 			],
 			"synced": false,
-			"rawModeData": "{\"body\":\"This is a reply test via API\"}"
+			"rawModeData": "{\"body\":\"This is a reply test via API {{$timestamp}}\"}"
 		},
 		{
 			"id": "e56c228c-5f46-1d95-8e3c-8deb641b8ca5",
-			"name": "404 Unknown url/method combo",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "The desired route is not available for the specified HTTP method.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "PUT",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 404 Not Found\"] = responseCode.code === 404;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\";\ntests[\"Error title OK\"] = data.title === \"Unknown url/method combination.\";\ntests[\"Error detail OK\"] = data.detail === \"The desired route [https://public-api.vitrue.com/admin/v1/accounts] is not available for the specified HTTP method [PUT].\";\ntests[\"Error status OK\"] = data.status === 404;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512741,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:32:15.000Z",
-			"updatedAt": "2015-05-28T21:23:26.000Z",
+			"helperAttributes": {},
+			"time": 1435169371230,
+			"name": "404 Unknown url/method combo",
+			"description": "The desired route is not available for the specified HTTP method.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1708,28 +1692,20 @@
 		},
 		{
 			"id": "ef0ff101-1632-77ca-bae7-9a363a9fd4bf",
-			"name": "403 Request is forbidden",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "An error occurred executing the request.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{engage_gk}}/messages?BUNDLE_ID={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 403 Request is forbidden\"] = responseCode.code === 403;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Status 403\"] = data.status === 403;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 403 Forbidden\"] = responseCode.code === 403;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4\";\ntests[\"Error title OK\"] = data.title === \"Request is forbidden.\";\ntests[\"Error detail OK\"] = data.detail === \"An error occurred executing the request: {\\\"error\\\":\\\"Bundle id is required\\\"}\";\ntests[\"Error status OK\"] = data.status === 403;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512750,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-13T18:28:36.000Z",
-			"updatedAt": "2015-05-28T21:23:27.000Z",
+			"helperAttributes": {},
+			"time": 1435168952402,
+			"name": "403 Request is forbidden",
+			"description": "An error occurred executing the request.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1847,28 +1823,20 @@
 		},
 		{
 			"id": "f03cbe3a-db03-219f-2893-aa6a40b57aa8",
-			"name": "401 Unauthorized accounts",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "should return 401 Unauthorized error and should not return any data.",
 			"headers": "Authorization: Bearer f2e7b329daaae2212f9623719e17db2d789fe90d7463f2255af0523111748e4c\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 401 Unauthorized\"] = responseCode.code === 401;\n\n//Verifying response data\n\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2\";\ntests[\"Error title OK\"] = data.title === \"Unauthorized.\";\ntests[\"Error detail OK\"] = data.detail === \"The user credentials provided with the request are invalid or do not provide the necessary level of access.\";\ntests[\"Error status OK\"] = data.status === 401;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512753,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:58.000Z",
-			"updatedAt": "2015-05-28T21:23:27.000Z",
+			"helperAttributes": {},
+			"time": 1435168799070,
+			"name": "401 Unauthorized accounts",
+			"description": "should return 401 Unauthorized error and should not return any data.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
 			"responses": [
 				{
@@ -1967,61 +1935,53 @@
 		},
 		{
 			"id": "f31ad360-5621-4255-d638-6e4f3ae1f107",
-			"name": "406 Not Acceptable",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Content-Type header is incorrect. Format not accepted.",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/metadata-catalog",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 406 Not Acceptable\"] = responseCode.code === 406;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7\";\ntests[\"Error title OK\"] = data.title === \"Format not accepted.\";\ntests[\"Error detail OK\"] = data.detail === \"The requested format is not supported for the desired route [https://public-api.vitrue.com/admin/v1/metadata-catalog].\";\ntests[\"Error status OK\"] = data.status === 406;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772017,
-			"history": null,
-			"createdAt": "2015-05-29T19:21:59.000Z",
-			"updatedAt": "2015-05-29T19:21:59.000Z",
+			"helperAttributes": {},
+			"time": 1435169479475,
+			"name": "406 Not Acceptable",
+			"description": "Content-Type header is incorrect. Format not accepted.",
 			"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
 					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+						"code": 406,
+						"name": "Not Acceptable",
+						"detail": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request."
 					},
-					"time": 107,
+					"time": 466,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "249",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=error",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:51:39 GMT",
+							"value": "Wed, 24 Jun 2015 18:11:20 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -2033,20 +1993,20 @@
 						{
 							"name": "Status",
 							"key": "Status",
-							"value": "200 OK",
+							"value": "406 Not Acceptable",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
 							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
 						},
 						{
 							"name": "X-RateLimit-Limit",
@@ -2057,13 +2017,19 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "897",
+							"value": "892",
 							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"items\":[{\"name\":\"accounts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\"}]},{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles\"}]},{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog\"},{\"rel\":\"up\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1\"}]}",
+					"text": "{\"type\":\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7\",\"title\":\"Format not accepted.\",\"detail\":\"The requested format is not supported for the desired route [https://public-api.vitrue.com/admin/v1/metadata-catalog].\",\"status\":406}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -2077,15 +2043,41 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "caf40d3a-c2c2-beff-0126-16e014918299",
+					"id": "b87f359d-2a38-82d0-20fd-7eb36bfdb791",
 					"name": "Sample response",
-					"request": "f96631c1-6b8b-456a-ed22-43b49095f0a6",
-					"owner": "49600",
-					"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119"
+					"request": {
+						"name": "406 Not Acceptable",
+						"description": "Content-Type header is incorrect. Format not accepted.",
+						"url": "{{accounts_gk}}/metadata-catalog",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 406 Not Acceptable\"] = responseCode.code === 406;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Error type OK\"] = data.type === \"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7\";\ntests[\"Error title OK\"] = data.title === \"Format not accepted.\";\ntests[\"Error detail OK\"] = data.detail === \"The requested format is not supported for the desired route [https://public-api.vitrue.com/admin/v1/metadata-catalog].\";\ntests[\"Error status OK\"] = data.status === 406;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "f31ad360-5621-4255-d638-6e4f3ae1f107",
+						"collectionId": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 406 Not Acceptable": true,
+							"Error type OK": true,
+							"Error title OK": true,
+							"Error detail OK": true,
+							"Error status OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
-			"collectionOwner": 0,
-			"collection": "dea3668f-68b2-c4b3-93b7-b8bfc4b53699"
+			"synced": false
 		}
 	]
 }

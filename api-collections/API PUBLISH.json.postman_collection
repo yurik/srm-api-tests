@@ -4,6 +4,7 @@
 	"description": "Collection of Public API endpoints for Publish",
 	"order": [
 		"f49d192b-d5c6-0600-ced0-bf06f1790c8b",
+		"979d1d49-b514-4ea6-6125-f18959970b55",
 		"a8297b11-b591-cc29-2191-4a791f3a5b69",
 		"05b50aec-3afa-b66d-410f-40a22382dfa4",
 		"fa3c2b4e-345c-b372-5563-f3e8552d2a70",
@@ -38,7 +39,6 @@
 	"public": false,
 	"createdAt": "2015-05-28T21:23:17.000Z",
 	"updatedAt": "2015-05-28T21:36:59.000Z",
-	"hasRequests": true,
 	"synced": false,
 	"requests": [
 		{
@@ -51,10 +51,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\nvar data = JSON.parse(responseBody);\n\nfor (i = 0; i < data.items.length; i++) {\n  tests[\"Post on TW Yuriy Social \" + i] = [66094,129052].indexOf(data.items[i].resource.id) > -1;\n}",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\n\nfor (i = 0; i < data.items.length; i++) {\n  tests[\"Post on TW Yuriy Social \" + i] = [66094,129052].indexOf(data.items[i].resource.id) > -1;\n}",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1433882564346,
+			"time": 1435179795461,
 			"name": "GET /posts?resourceId",
 			"description": "Getting posts list for specific resource",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -268,7 +268,6 @@
 					}
 				}
 			],
-			"owner": "49600",
 			"synced": false
 		},
 		{
@@ -281,10 +280,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010663053,
+			"time": 1435180819906,
 			"name": "POST /posts TW",
 			"description": "Publishing a TW post",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -301,10 +300,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010654091,
+			"time": 1435180816368,
 			"name": "POST /posts FB +tags ???",
 			"description": "Publishing a FB post with tags",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -321,10 +320,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010672891,
+			"time": 1435180824299,
 			"name": "POST /posts TW +attachment???",
 			"description": "Publishing a TW post with attachment",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -341,10 +340,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010605883,
+			"time": 1435180804611,
 			"name": "POST /posts FB action:draft",
 			"description": "Saving a FB post as draft ",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -361,10 +360,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010596419,
+			"time": 1435180800973,
 			"name": "POST /posts FB action:publish",
 			"description": "Publishing a FB post ",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -381,10 +380,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010732876,
+			"time": 1435180843403,
 			"name": "POST /posts SW",
 			"description": "Publishing a SW post",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -401,10 +400,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010699886,
+			"time": 1435180831660,
 			"name": "POST /posts TW +140chars ???",
 			"description": "Publishing a TW post with over 140 chars",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -421,10 +420,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010715882,
+			"time": 1435180835089,
 			"name": "POST /posts G+",
 			"description": "Publishing a G+ post",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -433,28 +432,20 @@
 		},
 		{
 			"id": "4ebd9e85-90cf-fe8e-5cda-c7b420e36a7b",
-			"name": "DELETE /posts/:id remove false",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Deleting a post from SRM Publish only(post won't delete on social network)",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "DELETE",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts/{{post_id_del}}?bundleId={{bundle_id}}&remove_from_network=false",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\ntests[\"Success true\"] = responseBody.has(\"true\");",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content. OK\"] = responseCode.code === 204;\n\n//Verifying response data\n\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512673,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:20.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435180935169,
+			"name": "DELETE /posts/:id remove false",
+			"description": "Deleting a post from SRM Publish only(post won't delete on social network)",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false
 		},
@@ -468,10 +459,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010577736,
+			"time": 1435180796677,
 			"name": "POST /posts FB",
 			"description": "Publishing a FB post (action not specified = default, publishing immediatelly)",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -488,40 +479,32 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010630572,
+			"time": 1435180808189,
 			"name": "POST /posts FB action:schedule",
 			"description": "Scheduling a FB post ",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false,
-			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n        \"reportName\":\"New scheduled post... {{$timestamp}}\",\n         \"message\":\"Hello, this is scheduled post {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"schedule\",\n     \"time\":\"2015-08-02T19:50:55Z\",\n     \"time_zone\":\"America/Los_Angeles\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      }\n   ]\n}"
+			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n        \"reportName\":\"New scheduled post... {{$timestamp}}\",\n         \"message\":\"Hello, this is scheduled post {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"schedule\",\n     \"time\":\"2015-12-12T19:50:55Z\",\n     \"time_zone\":\"America/Los_Angeles\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      }\n   ]\n}"
 		},
 		{
 			"id": "6be65e1f-0901-3e53-7c24-409dd39ded3c",
-			"name": "DELETE /posts/:id remove 1",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Deleting a post from Publish and social network",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "DELETE",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts/{{post_id_del}}?bundleId={{bundle_id}}&remove_from_network=1",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\ntests[\"Success true\"] = responseBody.has(\"true\");",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content. OK\"] = responseCode.code === 204;\n\n//Verifying response data\n\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512703,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:21.000Z",
-			"updatedAt": "2015-05-28T21:23:23.000Z",
+			"helperAttributes": {},
+			"time": 1435180939304,
+			"name": "DELETE /posts/:id remove 1",
+			"description": "Deleting a post from Publish and social network",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false
 		},
@@ -535,15 +518,15 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010723698,
+			"time": 1435181497030,
 			"name": "POST /posts LI",
 			"description": "Publishing a LI post",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false,
-			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Stuff on Linkedin...{{$timestamp}}\",\n         \"message\":\"Hello, LI test...{{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"3791967\",\n         \"network\":\"linkedin\"\n      }\n   ]\n}"
+			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Stuff on Linkedin...{{$timestamp}}\",\n         \"message\":\"Hello, LI test...{{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"3798337\",\n         \"network\":\"linkedin\"\n      }\n   ]\n}"
 		},
 		{
 			"id": "86686e25-96e0-328d-7018-c83876e631e9",
@@ -555,10 +538,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010679788,
+			"time": 1435180828385,
 			"name": "POST /posts TW +tags ???",
 			"description": "Publishing a TW post with tags",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -567,28 +550,20 @@
 		},
 		{
 			"id": "91ffb6d6-3c1e-3b31-e598-4798927a601e",
-			"name": "DELETE /posts/:id remove 0",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Deleting a post from SRM Publish only(post won't delete on social network)",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "DELETE",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts/{{post_id_del}}?bundleId={{bundle_id}}&remove_from_network=0",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\ntests[\"Success true\"] = responseBody.has(\"true\");",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content. OK\"] = responseCode.code === 204;\n\n//Verifying response data\n\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512723,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:23.000Z",
-			"updatedAt": "2015-05-28T21:23:24.000Z",
+			"helperAttributes": {},
+			"time": 1435180943577,
+			"name": "DELETE /posts/:id remove 0",
+			"description": "Deleting a post from SRM Publish only(post won't delete on social network)",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false
 		},
@@ -602,32 +577,272 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010549679,
+			"time": 1435180228152,
 			"name": "POST /posts FB+TW+LI+SW+G+",
 			"description": "Publishing to all supported channel types(fb, tw, sw, li, g+)",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 202,
+						"name": "Accepted",
+						"detail": "The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place."
+					},
+					"time": 956,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "453",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 24 Jun 2015 21:10:59 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "202 Accepted",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "897",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"items\":[{\"id\":\"1882335_33268\"},{\"id\":\"1882335_33269\"},{\"id\":\"1882335_33271\"},{\"id\":\"1882335_34012\"}],\"links\":[{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882335_33268\"},{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882335_33269\"},{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882335_33271\"},{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882335_34012\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "6be649d1-fb7d-5204-9ae8-16403a1e3303",
+					"name": "Sample response",
+					"request": {
+						"name": "POST /posts FB+TW+LI+SW+G+",
+						"description": "Publishing to all supported channel types(fb, tw, sw, li, g+)",
+						"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to all supported channels...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB, TW, SW, LI, G+ {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      },\n      {  \n         \"identifier\":\"106448488725363562543\",\n         \"network\":\"google\"\n      },\n     {  \n         \"identifier\":\"3803654524\",\n         \"network\":\"sina-weibo\"\n      },\n     {  \n         \"identifier\":\"3791967\",\n         \"network\":\"linkedin\"\n      }\n   ]\n}",
+						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"dataMode": "raw",
+						"method": "POST",
+						"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "93e00567-a4f1-c70a-6fac-3aaacfc534c9",
+						"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 202 Accepted": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
+				}
+			],
 			"synced": false,
 			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to all supported channels...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB, TW, SW, LI, G+ {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      },\n      {  \n         \"identifier\":\"106448488725363562543\",\n         \"network\":\"google\"\n      },\n     {  \n         \"identifier\":\"3803654524\",\n         \"network\":\"sina-weibo\"\n      },\n     {  \n         \"identifier\":\"3791967\",\n         \"network\":\"linkedin\"\n      }\n   ]\n}"
 		},
 		{
+			"id": "979d1d49-b514-4ea6-6125-f18959970b55",
+			"headers": "Authorization: {{auth_token}}\n",
+			"url": "{{publish_gk}}/posts/{{post_id_via_api}}?bundleId={{bundle_id}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1435181196605,
+			"name": "GET /posts/:post_id_via_api",
+			"description": "Getting posts list by new post_id",
+			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 236,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "639",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=singular",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:42:15 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "869",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":\"77962_9775\",\"body\":\"Hello, world I'm publishing\",\"reportName\":\"Testing post with no action - will publish immediatelly\",\"authoredBy\":{\"id\":1830,\"name\":\"Yuriy Social\"},\"link\":null,\"status\":\"published\",\"resource\":{\"id\":66092,\"name\":\"Baramubara\",\"resourceType\":\"facebook\"},\"attachments\":[{\"type\":null,\"url\":null,\"thumbnailUrl\":null}],\"createdAt\":\"2015-06-09T20:31:30Z\",\"publishAt\":null,\"postedAt\":\"2015-06-09T20:31:33Z\",\"links\":[{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/publish/v1/posts/77962_9775?bundleId=9059\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/publish/v1/posts/77962_9775\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "18b7af77-f5ee-f089-1486-b7c1c09323b7",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /posts/:id",
+						"description": "Getting posts list",
+						"url": "{{publish_gk}}/posts/{{post_id}}?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "a8297b11-b591-cc29-2191-4a791f3a5b69",
+						"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			],
+			"synced": false
+		},
+		{
 			"id": "9c5b2e64-71fc-ef0b-d815-d8c957d0d704",
 			"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-			"url": "{{publish_gk}}/posts/{{post_id_new}}?bundleId={{bundle_id}}",
+			"url": "{{publish_gk}}/posts/{{post_id_via_api}}?bundleId={{bundle_id}}",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "PUT",
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010538246,
-			"name": "PUT /posts/:post_id_new",
-			"description": "Updating posts with new id e.g. 12345_4321\nbroadcast_id, stream_id",
+			"time": 1435180186167,
+			"name": "PUT /posts/:post_id_via_api",
+			"description": "Updating posts with id generated when posting via API e.g. 12345_4321\nbroadcast_id, stream_id",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"responses": [
 				{
@@ -882,40 +1097,143 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010566956,
+			"time": 1435180792575,
 			"name": "POST /posts FB & TW + link(body)",
 			"description": "Publishing to FB and TW post with link in the body",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 202,
+						"name": "Accepted",
+						"detail": "The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place."
+					},
+					"time": 1228,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "237",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 24 Jun 2015 21:11:39 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "202 Accepted",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "895",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"items\":[{\"id\":\"1882338_33268\"},{\"id\":\"1882338_33269\"}],\"links\":[{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882338_33268\"},{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882338_33269\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "36348e14-9381-ce84-fd4c-d778ab3f0a59",
+					"name": "Sample response",
+					"request": {
+						"name": "POST /posts FB & TW + link(body)",
+						"description": "Publishing to FB and TW post with link in the body",
+						"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to multiple channels + link in the body...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB and TW + link http://bit.ly/1Btgcg8 ... {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      }\n   ]\n}",
+						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"dataMode": "raw",
+						"method": "POST",
+						"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "cf4c0385-1a2e-d4bc-d7fb-aa60b0abda59",
+						"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 202 Accepted": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
+				}
+			],
 			"synced": false,
 			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to multiple channels + link in the body...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB and TW + link http://bit.ly/1Btgcg8 ... {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      }\n   ]\n}"
 		},
 		{
 			"id": "d3c5dd44-e57a-334b-cb5c-97a4386a6344",
-			"name": "DELETE /posts/:id remove true",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Deleting a post from Publish and social network",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "DELETE",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts/{{post_id_del}}?bundleId={{bundle_id}}&remove_from_network=true",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\ntests[\"Success true\"] = responseBody.has(\"true\");",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content. OK\"] = responseCode.code === 204;\n\n//Verifying response data\n\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512752,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:22.000Z",
-			"updatedAt": "2015-05-28T21:23:27.000Z",
+			"helperAttributes": {},
+			"time": 1435180930370,
+			"name": "DELETE /posts/:id remove true",
+			"description": "Deleting a post from Publish and social network",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false
 		},
@@ -929,10 +1247,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010644276,
+			"time": 1435180812693,
 			"name": "POST /posts FB +attachment ???",
 			"description": "Publishing a FB post with attachment",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -949,40 +1267,143 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010558147,
+			"time": 1435180224250,
 			"name": "POST /posts FB & TW",
 			"description": "Publishing to FB and TW post",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 202,
+						"name": "Accepted",
+						"detail": "The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place."
+					},
+					"time": 1037,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "237",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 24 Jun 2015 21:11:22 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "202 Accepted",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "896",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"items\":[{\"id\":\"1882336_33268\"},{\"id\":\"1882336_33269\"}],\"links\":[{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882336_33268\"},{\"rel\":\"self\",\"href\":\"https://gatekeeper.vitrue.com/publish/v1/posts/1882336_33269\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "9ab50c49-67ee-bfa5-937d-c26f0e453524",
+					"name": "Sample response",
+					"request": {
+						"name": "POST /posts FB & TW",
+						"description": "Publishing to FB and TW post",
+						"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}",
+						"pathVariables": {},
+						"data": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to multiple channels...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB and TW... {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      }\n   ]\n}",
+						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"dataMode": "raw",
+						"method": "POST",
+						"tests": "//Verifying response code\ntests[\"Status code is 202 Accepted\"] = responseCode.code === 202;\n\n//Verifying response data",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "dd872887-90f4-0bfe-c305-2d72e8a3948a",
+						"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 202 Accepted": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
+				}
+			],
 			"synced": false,
 			"rawModeData": "{  \n   \"content\": \n      {  \n         \"type\":\"text\",\n         \"reportName\":\"Testing Publishing to multiple channels...{{$timestamp}}\",\n         \"message\":\"Hello, this is post to FB and TW... {{$timestamp}}\"\n      }\n   ,\n  \"action\":\n    {\"type\":\"publish\"\n    },\n   \"resources\":[  \n      {  \n         \"identifier\":\"310497749104102\",\n         \"network\":\"facebook\"\n      },\n     {  \n         \"identifier\":\"YuriySocial\",\n         \"network\":\"twitter\"\n      }\n   ]\n}"
 		},
 		{
 			"id": "e39caa21-5ecc-b276-0cc8-5f094f620241",
-			"name": "DELETE /posts/:id",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Deleting a post from SRM Publish(not social network)",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "DELETE",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts/{{post_id}}?bundleId={{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\ntests[\"Success true\"] = responseBody.has(\"true\");",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 204 No Content. OK\"] = responseCode.code === 204;\n\n//Verifying response data\n\n\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512762,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:26.000Z",
-			"updatedAt": "2015-05-28T21:23:28.000Z",
+			"helperAttributes": {},
+			"time": 1435180920183,
+			"name": "DELETE /posts/:id",
+			"description": "Deleting a post from SRM Publish(not social network)",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
 			"synced": false
 		},
@@ -996,10 +1417,10 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435010527095,
+			"time": 1435179845206,
 			"name": "PUT /posts/:id",
 			"description": "Updating posts",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -1126,10 +1547,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435011870513,
+			"time": 1435179773684,
 			"name": "GET /posts",
 			"description": "Getting posts list",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
@@ -1248,30 +1669,21 @@
 		},
 		{
 			"id": "fa3c2b4e-345c-b372-5563-f3e8552d2a70",
-			"name": "GET /posts?limit",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting posts list with limit",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{publish_gk}}/posts?bundleId={{bundle_id}}&limit=3",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512775,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:03:28.000Z",
-			"updatedAt": "2015-05-28T21:23:30.000Z",
+			"helperAttributes": {},
+			"time": 1435179801446,
+			"name": "GET /posts?limit",
+			"description": "Getting posts list with limit",
 			"collectionId": "9aa325bd-0fc1-9550-0cb5-1cda052b026a",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -1381,7 +1793,8 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		}
 	]
 }

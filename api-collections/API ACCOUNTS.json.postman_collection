@@ -28,30 +28,21 @@
 	"requests": [
 		{
 			"id": "040c4668-b1cd-8774-1cc2-8ca034a9fd4e",
-			"name": "GET /accounts?totalResults",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting accounts list (total)",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{accounts_gk}}/accounts?total_results=true",
+			"url": "{{accounts_gk}}/accounts?totalResults=true",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\ntests[\"TotalResults OK\"] = responseBody.has(\"totalResults\");",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512611,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:51.000Z",
-			"updatedAt": "2015-05-28T21:23:18.000Z",
+			"helperAttributes": {},
+			"time": 1435174502844,
+			"name": "GET /accounts?totalResults",
+			"description": "Getting accounts list (total)",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -161,34 +152,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "244efd33-c7e6-0e7c-5847-5c7e4a6de248",
-			"name": "GET /accounts?offset=1",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "get accounts excluding the first one",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts?offset=1",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\ntests[\"Offset OK\"] = responseBody.has(\"offset\");",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512617,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:52.000Z",
-			"updatedAt": "2015-05-28T21:23:18.000Z",
+			"helperAttributes": {},
+			"time": 1435174612888,
+			"name": "GET /accounts?offset=1",
+			"description": "get accounts excluding the first one",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -298,34 +281,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "30a8e44b-a79c-ebd6-0810-17c243948821",
-			"name": "GET /bundles/:bundle_id/",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting bundle info(no subbundles)",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/bundles/{{bundle_id}}",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512624,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:52.000Z",
-			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"helperAttributes": {},
+			"time": 1435174683871,
+			"name": "GET /bundles/:bundle_id/",
+			"description": "Getting bundle info(no subbundles)",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -435,34 +410,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "357ff2cd-70cd-c8e2-3c24-e6bc9d538b24",
-			"name": "GET /resources/:resourceId",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting resources based on `resourceId`",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/resources/{{insta_resource_id}}",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512630,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:53.000Z",
-			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"helperAttributes": {},
+			"time": 1435174747417,
+			"name": "GET /resources/:resourceId",
+			"description": "Getting resources based on `resourceId`",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -578,34 +545,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "3a0031b0-8995-e9b1-f5e7-138cf1cf8652",
-			"name": "GET /accounts?limit=100",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Returns up to 100 accounts",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts?limit=100",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\ntests[\"Limit OK\"] = responseBody.has(\"limit\");",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512642,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:54.000Z",
-			"updatedAt": "2015-05-28T21:23:20.000Z",
+			"helperAttributes": {},
+			"time": 1435174542218,
+			"name": "GET /accounts?limit=100",
+			"description": "Returns up to 100 accounts",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -715,34 +674,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "40a08d34-f61f-622a-edc2-505d375fdaee",
-			"name": "GET /accounts/:account_id/resources?page=1",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting resources belonging to an account. First page only",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources?page=1",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512650,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:54.000Z",
-			"updatedAt": "2015-05-28T21:23:20.000Z",
+			"helperAttributes": {},
+			"time": 1435174743096,
+			"name": "GET /accounts/:account_id/resources?page=1",
+			"description": "Getting resources belonging to an account. First page only",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -852,34 +803,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "657c8898-5d3b-56ee-87ea-7a7608182c01",
-			"name": "GET /accounts/:bundle_id/resources",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting bundle including sub-bundles info",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512660,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:55.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435174677298,
+			"name": "GET /accounts/:bundle_id/resources",
+			"description": "Getting bundle including sub-bundles info",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -989,34 +932,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "65c2ea50-aa5e-28da-588b-18f75c7e3902",
-			"name": "GET /accounts?page=1",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Returns paginated(e.g. from page1) accounts",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts?page=1",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512667,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:56.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435174586060,
+			"name": "GET /accounts?page=1",
+			"description": "Returns paginated(e.g. from page1) accounts",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -1126,34 +1061,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "8703e518-2574-0edf-6820-81d7b1071eba",
-			"name": "GET /accounts/:account_id/resources",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting resources belonging to an account",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512672,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:56.000Z",
-			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"helperAttributes": {},
+			"time": 1435174737014,
+			"name": "GET /accounts/:account_id/resources",
+			"description": "Getting resources belonging to an account",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -1263,34 +1190,26 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "96c5cc19-b238-1c36-143c-218b714b3974",
-			"name": "GET /bundles/:bundle_id/resources",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting resources for specific bundle",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{accounts_gk}}/bundles/{{bundle_id}}/resources",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512683,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:57.000Z",
-			"updatedAt": "2015-05-28T21:23:22.000Z",
+			"helperAttributes": {},
+			"time": 1435174732926,
+			"name": "GET /bundles/:bundle_id/resources",
+			"description": "Getting resources for specific bundle",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -1400,7 +1319,8 @@
 						}
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "b51e29fd-6a8a-8ed9-d48d-09e24596ed2c",
@@ -1412,136 +1332,14 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\nvar data = JSON.parse(responseBody);\ntests[\"Default count is 30\"] = data.count === 30;",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435016447551,
+			"time": 1435174338742,
 			"name": "GET /accounts",
 			"description": "Getting accounts list",
 			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
-			"responses": [],
-			"synced": false
-		},
-		{
-			"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
-			"name": "GET /accounts/:bundle_id/bundles",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting bundle including sub-bundles info",
-			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
-			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
-			"version": 2,
-			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "49600",
-			"lastRevision": 6512709,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-21T02:02:56.000Z",
-			"updatedAt": "2015-05-28T21:23:24.000Z",
-			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
 			"responses": [
-				{
-					"owner": "49600",
-					"lastUpdatedBy": "49600",
-					"lastRevision": 6512717,
-					"request": {
-						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
-						"version": 2
-					},
-					"id": "83f779bc-db16-48f1-79d4-6529cf226870",
-					"name": "id moved to top",
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK"
-					},
-					"time": "2019",
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
-						},
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "5212",
-							"description": ""
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/vnd.oracle.resource+json; type=collection",
-							"description": ""
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Thu, 07 May 2015 19:24:27 GMT",
-							"description": ""
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": ""
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": ""
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": ""
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": ""
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "896",
-							"description": ""
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"id\":10261,\"name\":\"3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10261\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10261\"}]},{\"id\":10265,\"name\":\"add #2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10265\"}]},{\"id\":9497,\"name\":\"Ants\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9497\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9497\"}]},{\"id\":9493,\"name\":\"Arachnids \",\"description\":\"Little 8-legged critters - creep me out\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9493\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9493\"}]},{\"id\":9042,\"name\":\"Baby Rex\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9042\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9042\"}]},{\"id\":7735,\"name\":\"Bald\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7735\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7735\"}]},{\"id\":7686,\"name\":\"Beagle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7686\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7686\"}]},{\"id\":7681,\"name\":\"Birds - rename\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7681\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7681\"}]},{\"id\":9526,\"name\":\"Black Widow\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9526\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9526\"}]},{\"id\":9528,\"name\":\"Brown Recluse\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9528\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9528\"}]},{\"id\":9885,\"name\":\"Bundle 12345\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9885\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9885\"}]},{\"id\":9884,\"name\":\"bundle bundle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9884\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9884\"}]},{\"id\":7683,\"name\":\"Calico\",\"description\":\"Words. So Many Words.\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7683\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7683\"}]},{\"id\":7690,\"name\":\"Callie\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7690\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7690\"}]},{\"id\":9742,\"name\":\"Caramel\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9742\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9742\"}]},{\"id\":10010,\"name\":\"Catchall\",\"description\":\"Here is some description\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10010\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10010\"}]},{\"id\":7679,\"name\":\"Cats\",\"description\":\"Meow\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7679\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7679\"}]},{\"id\":9649,\"name\":\"Chocolates\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9649\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9649\"}]},{\"id\":9747,\"name\":\"Coconut\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9747\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9747\"}]},{\"id\":9775,\"name\":\"Cordial Cherry\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9775\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9775\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles\"},{\"rel\":\"next\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles?offset=20&limit=20\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": "{\"url\":\"{{accounts_gk}}/accounts/{{bundle_id}}/bundles\",\"pathVariables\":{},\"data\":[],\"headers\":\"Authorization: {{auth_token}}\\n\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"tests[\\\"Status code is 200 OK\\\"] = responseCode.code === 200;\",\"version\":2}",
-					"createdAt": "2015-05-27T15:32:06.000Z",
-					"updatedAt": "2015-05-28T21:23:24.000Z",
-					"write": true
-				},
 				{
 					"status": "",
 					"responseCode": {
@@ -1549,18 +1347,18 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 433,
+					"time": 969,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
 							"name": "Content-Length",
 							"key": "Content-Length",
-							"value": "971",
+							"value": "2713",
 							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
@@ -1572,7 +1370,7 @@
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 09 Jun 2015 20:37:47 GMT",
+							"value": "Wed, 24 Jun 2015 19:32:18 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -1602,13 +1400,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "885",
+							"value": "899",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"count\":3,\"hasMore\":false,\"items\":[{\"name\":\"API_BUNDLE_1\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"}],\"id\":9062},{\"name\":\"API_BUNDLE_2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"}],\"id\":9063},{\"name\":\"API_subbundle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"}],\"id\":9064}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"}]}",
+					"text": "{\"count\":11,\"hasMore\":false,\"items\":[{\"name\":\"3D TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11232\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11232\"}],\"bundleId\":11232},{\"name\":\"CH3-QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11513\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11513\"}],\"bundleId\":11513},{\"name\":\"China QA Automation\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15338\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15338\"}],\"bundleId\":15338},{\"name\":\"ENGAGE QA ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/8881\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/8881\"}],\"bundleId\":8881},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/6354\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/6354\"}],\"bundleId\":6354},{\"name\":\"POST SHARDING QA ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/17514\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/17514\"}],\"bundleId\":17514},{\"name\":\"Public API QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16415\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16415\"}],\"bundleId\":16415},{\"name\":\"QA_Automation\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11886\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/11886\"}],\"bundleId\":11886},{\"name\":\"SRM-ODC acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15016\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/15016\"}],\"bundleId\":15016},{\"name\":\"Test QA \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/9941\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/9941\"}],\"bundleId\":9941},{\"name\":\"TEST QA POST ODC\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/19517\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/19517\"}],\"bundleId\":19517}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -1622,21 +1420,21 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "3561aa45-1655-055e-0889-2258d4296910",
+					"id": "554f838a-58c4-e068-f51b-f1567a62a481",
 					"name": "Sample response",
 					"request": {
-						"name": "GET /accounts/:bundle_id/bundles",
-						"description": "Getting bundle including sub-bundles info",
-						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+						"name": "GET /accounts",
+						"description": "Getting accounts list",
+						"url": "{{accounts_gk}}/accounts",
 						"pathVariables": {},
 						"data": [],
 						"headers": "Authorization: {{auth_token}}\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
 						"isFromCollection": true,
 						"version": 2,
-						"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
+						"id": "b51e29fd-6a8a-8ed9-d48d-09e24596ed2c",
 						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
 						"currentHelper": "normal",
 						"helperAttributes": {},
@@ -1647,7 +1445,139 @@
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
+				}
+			],
+			"synced": false
+		},
+		{
+			"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
+			"headers": "Authorization: {{auth_token}}\n",
+			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1435174653948,
+			"name": "GET /accounts/:bundle_id/bundles",
+			"description": "Getting bundle including sub-bundles info",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 903,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "972",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 24 Jun 2015 19:37:11 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "891",
+							"description": "Custom header"
 						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"hasMore\":false,\"items\":[{\"name\":\"Public api bundle 1\",\"description\":\"test bundle for public api\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16416\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16416\"}],\"id\":16416},{\"name\":\"Public api bundle 2\",\"description\":\"test bundle 2\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16417\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16417\"}],\"id\":16417},{\"name\":\"subbundle for public api \",\"description\":\"test for public api\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16418\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/16418\"}],\"id\":16418}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/16415/bundles\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/16415/bundles\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "84c77e3f-9d99-b079-1559-b2cb5b192bee",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/:bundle_id/bundles",
+						"description": "Getting bundle including sub-bundles info",
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\ntests[\"Limit OK\"] = responseBody.has(\"limit\");",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true,
+							"Limit OK": false
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],

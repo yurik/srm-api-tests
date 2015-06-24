@@ -51,10 +51,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Messages metadata OK\"] = data.name === \"messages\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012705229,
+			"time": 1435173226444,
 			"name": "GET /metadata-catalog/messages ",
 			"description": "Getting metadata list for messages JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -187,10 +187,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Replies metadata OK\"] = data.name === \"replies\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012720236,
+			"time": 1435173193668,
 			"name": "GET /messages/metadata-catalog/replies",
 			"description": "Getting metadata list for replies JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -202,30 +202,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 97,
+					"time": 337,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "394",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:52:08 GMT",
+							"value": "Wed, 24 Jun 2015 19:13:22 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -239,12 +239,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -267,7 +261,7 @@
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"messages\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/messages\"}]}",
+					"text": "{\"name\":\"replies\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/engage/v1/messages/metadata-catalog/replies\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/engage/v1/messages/metadata-catalog/replies\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/engage/v1/messages/{id}/replies\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -281,133 +275,18 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "4ea77f67-fde5-d972-e0d5-155879ab0f59",
+					"id": "0c861371-4400-3d59-c4f3-234a9bfbb18f",
 					"name": "Sample response",
 					"request": {
-						"name": "GET /metadata-catalog/messages ",
-						"description": "Getting metadata list for messages JSON",
-						"url": "{{engage_gk}}/metadata-catalog/messages",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "04fc3829-58fd-7a29-cc19-aa59c06431d5",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "1e28fb72-3f47-dfaf-089a-0bb6ce92b1f4"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 107,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 21:31:46 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "899",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"name\":\"replies\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/messages/metadata-catalog/replies\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/messages/metadata-catalog/replies\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/messages/{id}/replies\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "faca2841-56ed-32e9-ae08-05716c6ff331",
-					"name": "Sample response",
-					"request": {
-						"name": "GET /metadata-catalog/replies",
+						"name": "GET /messages/metadata-catalog/replies",
 						"description": "Getting metadata list for replies JSON",
 						"url": "{{engage_gk}}/messages/metadata-catalog/replies",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Replies metadata OK\"] = data.name === \"replies\";",
 						"isFromCollection": true,
 						"version": 2,
 						"id": "0fb7cedb-c86c-df50-0b83-01ba9d17ca5b",
@@ -415,14 +294,15 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Replies metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "2ba4b6b1-f20f-4eb4-4bf0-56c7c86617b3"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -453,30 +333,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 930,
+					"time": 339,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1212",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/schema+json",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 15 Jun 2015 17:40:07 GMT",
+							"value": "Wed, 24 Jun 2015 18:59:43 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -490,12 +370,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -512,128 +386,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "895",
+							"value": "887",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{id}/resources\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "parsed",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "30a10ad6-3955-e381-1733-2881b3d02e84",
-					"name": "application/json June 15",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of resources metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/resources",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "8dbb0aad-0b54-d908-748d-de4b264aecf4",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 185,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 15 Jun 2015 18:43:05 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "894",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"accountId\":{\"$ref\":\"#/definitions/accountId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]},\"accountId\":{\"type\":\"integer\",\"description\":\"The ID for the account.\"},\"bundles\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/bundle\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/bundles\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"}]}",
+					"text": "{\"$schema\":\"https://public-api.vitrue.com/oraschema\",\"definitions\":{\"accountId\":{\"type\":\"integer\",\"description\":\"The ID for the account.\"},\"resource\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this resource.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this resource.\"},\"resourceType\":{\"type\":\"string\",\"description\":\"The type of resource.\"},\"accountId\":{\"$ref\":\"#/definitions/accountId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"}]},\"resources\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/resource\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/resources\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/resources\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/resources\",\"method\":\"GET\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -647,21 +406,21 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "4630556c-4fb7-6222-8c8a-3a4bb4e42201",
-					"name": "schema+json June 15",
+					"id": "c2e6e456-d692-5d8d-fb9e-6ba043f9689a",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of resources metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/bundles",
+						"name": "GET /accounts/metadata-catalog/resources(schema)",
+						"description": "Getting decription of resources metadata catalog in accounts SCHEMA+JSON",
+						"url": "{{accounts_gk}}/accounts/metadata-catalog/resources",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/schema+json\n",
 						"dataMode": "params",
 						"method": "GET",
 						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 						"isFromCollection": true,
 						"version": 2,
-						"id": "8dbb0aad-0b54-d908-748d-de4b264aecf4",
+						"id": "143262d7-47f0-a451-d498-1684ff352cf7",
 						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 						"currentHelper": "normal",
 						"helperAttributes": {},
@@ -670,11 +429,10 @@
 						},
 						"testErrors": null,
 						"uiState": {
-							"activeRequestTab": "headers",
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -682,28 +440,20 @@
 		},
 		{
 			"id": "28003b07-5203-1f87-8c92-5b68dd5c5ead",
-			"name": "GET /app-check",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting app-check data",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/app-check",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Components - Redis OK\"] = data.components.redis === true;\ntests[\"Components - Postgres OK\"] = data.components.postgres === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772019,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:21:59.000Z",
-			"updatedAt": "2015-05-29T19:22:00.000Z",
+			"helperAttributes": {},
+			"time": 1435171544738,
+			"name": "GET /app-check",
+			"description": "Getting app-check data",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
@@ -816,10 +566,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Engage metadata OK\"] = data.items[0].name === \"messages\";\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012696682,
+			"time": 1435172766189,
 			"name": "GET /metadata-catalog (Engage)",
 			"description": "Getting metadata for Engage",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -831,30 +581,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 103,
+					"time": 342,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "536",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=collection",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:51:49 GMT",
+							"value": "Wed, 24 Jun 2015 19:06:21 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -868,12 +618,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -890,13 +634,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "897",
+							"value": "881",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"items\":[{\"name\":\"messages\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/messages\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1/metadata-catalog\"},{\"rel\":\"up\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/engage/v1\"}]}",
+					"text": "{\"items\":[{\"name\":\"messages\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/engage/v1/metadata-catalog/messages\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/engage/v1/messages\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/engage/v1/metadata-catalog\"},{\"rel\":\"up\",\"href\":\"https://public-api.vitrue.com/engage/v1\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -910,122 +654,7 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "84817acc-b01c-75d0-afd3-5f133c899306",
-					"name": "Sample response",
-					"request": {
-						"name": "GET /metadata-catalog engage",
-						"description": "Getting metadata for Engage",
-						"url": "{{engage_gk}}/metadata-catalog",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "283fbd78-44a2-fdbc-81a9-326c56148277",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "1e28fb72-3f47-dfaf-089a-0bb6ce92b1f4"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 99,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:52:25 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "897",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"items\":[{\"name\":\"posts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog/posts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog/posts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/posts\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog\"},{\"rel\":\"up\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": false,
-					"runTests": true,
-					"id": "1381bb91-43ab-0914-7136-6bb3580f0e13",
+					"id": "24a4d73e-7ab8-4647-be45-b2fbbe3296b9",
 					"name": "Sample response",
 					"request": {
 						"name": "GET /metadata-catalog (Engage)",
@@ -1036,7 +665,7 @@
 						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Engage metadata OK\"] = data.items[0].name === \"messages\";\n",
 						"isFromCollection": true,
 						"version": 2,
 						"id": "283fbd78-44a2-fdbc-81a9-326c56148277",
@@ -1044,122 +673,8 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 99,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:52:25 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "897",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"items\":[{\"name\":\"posts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog/posts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog/posts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/posts\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1/metadata-catalog\"},{\"rel\":\"up\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/publish/v1\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": false,
-					"runTests": true,
-					"id": "56647ad7-aa26-a21f-5221-7cc8648884c4",
-					"name": "Sample response",
-					"request": {
-						"name": "GET /metadata-catalog (Engage)",
-						"description": "Getting metadata for Engage",
-						"url": "{{engage_gk}}/metadata-catalog",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "283fbd78-44a2-fdbc-81a9-326c56148277",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Engage metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
@@ -1182,10 +697,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012633101,
+			"time": 1435172050803,
 			"name": "GET /metadata-catalog/resources",
 			"description": "Getting decription of resources metadata catalog",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -1197,30 +712,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 945,
+					"time": 495,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "367",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:40:54 GMT",
+							"value": "Wed, 24 Jun 2015 18:58:34 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -1234,12 +749,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -1256,13 +765,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "900",
+							"value": "890",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources\"}]}",
+					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/resources\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -1276,150 +785,34 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "b7acf961-e035-1961-ab5d-16f1f0b36539",
-					"name": "application/json June 16",
+					"id": "1ae28ee6-5239-11ce-1123-f3f075d66910",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
+						"name": "GET /metadata-catalog/resources",
 						"description": "Getting decription of resources metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/resources",
+						"url": "{{accounts_gk}}/metadata-catalog/resources",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 						"isFromCollection": true,
-						"write": true,
 						"version": 2,
 						"id": "2bd949fb-77ea-96e6-dbd1-c3514f47b03e",
 						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Resources metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 497,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:45:49 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "900",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"resource\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this resource.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this resource.\"},\"resourceType\":{\"type\":\"string\",\"description\":\"The type of resource.\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/resource\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "6134004f-d6b0-5fb5-d8d6-ca48d697b688",
-					"name": "schema+json June 16",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of resources metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/resources",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"write": true,
-						"version": 2,
-						"id": "2bd949fb-77ea-96e6-dbd1-c3514f47b03e",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -1450,30 +843,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 945,
+					"time": 402,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "638",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/schema+json",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:40:54 GMT",
+							"value": "Wed, 24 Jun 2015 18:58:53 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -1487,12 +880,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -1509,13 +896,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "900",
+							"value": "890",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources\"}]}",
+					"text": "{\"$schema\":\"https://public-api.vitrue.com/oraschema\",\"definitions\":{\"resource\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this resource.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this resource.\"},\"resourceType\":{\"type\":\"string\",\"description\":\"The type of resource.\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/resource\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -1529,22 +916,21 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "2258de2f-5ba4-7598-3086-9deefd9d12e8",
-					"name": "application/json June 16",
+					"id": "5bebd6b9-f2c7-f694-ae62-fdf279f5ab23",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
+						"name": "GET /metadata-catalog/resources(schema)",
 						"description": "Getting decription of resources metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/resources",
+						"url": "{{accounts_gk}}/metadata-catalog/resources",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/schema+json\n",
 						"dataMode": "params",
 						"method": "GET",
 						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 						"isFromCollection": true,
-						"write": true,
 						"version": 2,
-						"id": "2bd949fb-77ea-96e6-dbd1-c3514f47b03e",
+						"id": "31860499-dd5e-d3a7-d8a8-426ac127bb07",
 						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 						"currentHelper": "normal",
 						"helperAttributes": {},
@@ -1556,123 +942,7 @@
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 497,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:45:49 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "900",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"resource\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this resource.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this resource.\"},\"resourceType\":{\"type\":\"string\",\"description\":\"The type of resource.\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/resource\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "d57601e7-35fc-1ace-e75e-25c3cb715af1",
-					"name": "schema+json June 16",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of resources metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/resources",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"write": true,
-						"version": 2,
-						"id": "2bd949fb-77ea-96e6-dbd1-c3514f47b03e",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -1680,28 +950,20 @@
 		},
 		{
 			"id": "3493039d-89ed-12d4-350a-8b7a590337a9",
-			"name": "GET /publish (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "Getting version data for Publish",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/publish",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.items[0].version === \"v1\";\ntests[\"Lifecycle acive\"] = data.items[0].lifecycle === \"active\";\ntests[\"Latest true\"] = data.items[0].isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772030,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:22:01.000Z",
-			"updatedAt": "2015-05-29T19:22:01.000Z",
+			"helperAttributes": {},
+			"time": 1435171625717,
+			"name": "GET /publish (version)",
+			"description": "Getting version data for Publish",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
@@ -1960,28 +1222,20 @@
 		},
 		{
 			"id": "3f4c20ba-fd56-67f4-a88a-43e5f8c48ee5",
-			"name": "GET /engage (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting version data for Engage",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/engage",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.items[0].version === \"v1\";\ntests[\"Lifecycle acive\"] = data.items[0].lifecycle === \"active\";\ntests[\"Latest true\"] = data.items[0].isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772022,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:22:00.000Z",
-			"updatedAt": "2015-05-29T19:22:00.000Z",
+			"helperAttributes": {},
+			"time": 1435171579371,
+			"name": "GET /engage (version)",
+			"description": "Getting version data for Engage",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
@@ -2104,28 +1358,20 @@
 		},
 		{
 			"id": "4bbd39ca-25a2-8782-d036-607b5022d527",
-			"name": "GET /publish/v1 (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting version data for Publish",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/publish/v1",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.version === \"v1\";\ntests[\"Lifecycle acive\"] = data.lifecycle === \"active\";\ntests[\"Latest true\"] = data.isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772015,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:21:58.000Z",
-			"updatedAt": "2015-05-29T19:21:58.000Z",
+			"helperAttributes": {},
+			"time": 1435171607914,
+			"name": "GET /publish/v1 (version)",
+			"description": "Getting version data for Publish",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
@@ -2256,10 +1502,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Accounts metadata OK\"] = data.items[0].name === \"accounts\";\ntests[\"Bundles metadata OK\"] = data.items[1].name === \"bundles\";\ntests[\"Resources metadata OK\"] = data.items[2].name === \"resources\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012425891,
+			"time": 1435171855909,
 			"name": "GET /metadata-catalog (Accounts)",
 			"description": "Getting metadata for Accounts",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -2407,30 +1653,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 171,
+					"time": 638,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1201",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/schema+json",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 15 Jun 2015 16:59:45 GMT",
+							"value": "Wed, 24 Jun 2015 18:58:14 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -2444,12 +1690,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -2466,13 +1706,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "898",
+							"value": "890",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{id}/bundles\"}]}",
+					"text": "{\"$schema\":\"https://public-api.vitrue.com/oraschema\",\"definitions\":{\"accountId\":{\"type\":\"integer\",\"description\":\"The ID for the account.\"},\"bundle\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"accountId\":{\"$ref\":\"#/definitions/accountId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]},\"bundles\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/bundle\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/bundles\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -2486,15 +1726,15 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "e7c450cb-78fd-40f0-a869-24fbb42f505e",
-					"name": "application/json June 15",
+					"id": "8969e868-727d-9fa6-1cd3-4096cc62afe0",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of bundle resource metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/bundles",
+						"name": "GET /accounts/metadata-catalog/bundles(schema)",
+						"description": "Getting decription of bundle resource metadata catalog in accounts SCHEMA+JSON",
+						"url": "{{accounts_gk}}/accounts/metadata-catalog/bundles",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/schema+json\n",
 						"dataMode": "params",
 						"method": "GET",
 						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
@@ -2512,122 +1752,7 @@
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 1205,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 15 Jun 2015 17:32:35 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "899",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"accountId\":{\"$ref\":\"#/definitions/accountId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]},\"accountId\":{\"type\":\"integer\",\"description\":\"The ID for the account.\"},\"bundles\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/bundle\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/bundles\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "7de36c5d-2098-af20-08b7-f8d0cbc5b119",
-					"name": "schema+json June 15",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of bundle resource metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/bundles",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "54030c6e-8261-8f19-769c-c66644759edb",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -2643,10 +1768,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012465618,
+			"time": 1435172195472,
 			"name": "GET /metadata-catalog/accounts(schema)",
 			"description": "Getting decription of account resource metadata catalog",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -2771,28 +1896,20 @@
 		},
 		{
 			"id": "5f70aa1f-ad93-f5f7-69e2-8ec7e0a33f51",
-			"name": "GET /engage/v1 (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "Getting version data for Engage",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/engage/v1",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.version === \"v1\";\ntests[\"Lifecycle acive\"] = data.lifecycle === \"active\";\ntests[\"Latest true\"] = data.isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6772008,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:21:57.000Z",
-			"updatedAt": "2015-05-29T19:21:57.000Z",
+			"helperAttributes": {},
+			"time": 1435171590976,
+			"name": "GET /engage/v1 (version)",
+			"description": "Getting version data for Engage",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
@@ -2923,10 +2040,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Bundles metadata OK\"] = data.name === \"bundles\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012477352,
+			"time": 1435172043113,
 			"name": "GET /metadata-catalog/bundles ",
 			"description": "Getting description of bundles metadata catalog JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -2938,30 +2055,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 94,
+					"time": 399,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "359",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:11:32 GMT",
+							"value": "Wed, 24 Jun 2015 18:56:52 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -2975,12 +2092,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -2997,13 +2108,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "900",
+							"value": "893",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles\"}]}",
+					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -3017,18 +2128,18 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "7442221a-e328-9491-bacc-3487af665047",
-					"name": "application/json June 16",
+					"id": "c48e71ac-15fb-3320-bdcc-63b85d4799f1",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of bundles metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/bundles",
+						"name": "GET /metadata-catalog/bundles ",
+						"description": "Getting description of bundles metadata catalog JSON",
+						"url": "{{accounts_gk}}/metadata-catalog/bundles",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: Bearer aae3e4f36cf311ceacfe652d3df060f3d297f6403bc00bba651c24825a212218\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Bundles metadata OK\"] = data.name === \"bundles\";",
 						"isFromCollection": true,
 						"version": 2,
 						"id": "86341fb8-15fc-6302-1ce8-f6edefc9424c",
@@ -3036,131 +2147,15 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Bundles metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
-							"activeRequestTab": "headers",
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 566,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:27:57 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "900",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"resources\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/metadata-catalog/resources\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/bundle\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "47baadf8-a44b-4a16-06a7-9a24154c1910",
-					"name": "schema+json June 16",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of bundles metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/bundles",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: Bearer aae3e4f36cf311ceacfe652d3df060f3d297f6403bc00bba651c24825a212218\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "86341fb8-15fc-6302-1ce8-f6edefc9424c",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"activeRequestTab": "headers",
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -3176,145 +2171,45 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Accounts metadata OK\"] = data.name === \"accounts\";\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012449534,
+			"time": 1435171935244,
 			"name": "GET /metadata-catalog/accounts",
 			"description": "Getting decription of account resource metadata catalog",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
-					"owner": "50432",
-					"lastUpdatedBy": "50432",
-					"lastRevision": 7141096,
-					"request": {
-						"url": "{{base_url}}/admin/v1/metadata-catalog/accounts",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n",
-						"version": 2
-					},
-					"id": "ac5e0586-3300-eb85-9f2d-f42117f85fba",
-					"name": "Samle Response June 1, 2015",
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK"
-					},
-					"time": "216",
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": ""
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": ""
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 01 Jun 2015 18:05:23 GMT",
-							"description": ""
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": ""
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": ""
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": ""
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": ""
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": ""
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "893",
-							"description": ""
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"name\":\"accounts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": "{\"url\":\"{{base_url}}/admin/v1/metadata-catalog/accounts\",\"pathVariables\":{},\"data\":[],\"headers\":\"Authorization: {{auth_token}}\\nContent-Type: application/json\\n\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"//Verifying response code\\ntests[\\\"Status code is 200 OK\\\"] = responseCode.code === 200;\\n\",\"version\":2}",
-					"createdAt": "2015-06-01T18:12:49.000Z",
-					"updatedAt": "2015-06-01T18:12:49.000Z",
-					"write": true
-				},
-				{
 					"status": "",
 					"responseCode": {
 						"code": 200,
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 205,
+					"time": 488,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "363",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 15 Jun 2015 15:53:01 GMT",
+							"value": "Wed, 24 Jun 2015 18:52:13 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -3328,129 +2223,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "898",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"account\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"bundleId\":{\"$ref\":\"#/definitions/bundleId\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this account.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this account.\"},\"bundles\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\"},\"resources\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}\",\"method\":\"GET\"}]},\"bundleId\":{\"type\":\"integer\",\"description\":\"The bundle ID for this account.\"},\"accounts\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/account\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/accounts\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\",\"method\":\"GET\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "8eaf56b5-e707-46dc-da17-1360cf4092d4",
-					"name": "June 15",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/accounts",
-						"description": "Getting decription of account resource metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/accounts",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: Bearer e97383098ad0c3a75b52189fea8fcc33523dda33a48964e778dd755579b59e53\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"write": true,
-						"version": 2,
-						"id": "87ddd2f3-3bca-26d5-fdf9-41ac85c7f793",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"activeRequestTab": "headers",
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 189,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 15 Jun 2015 16:44:24 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -3473,7 +2245,7 @@
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"account\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"bundleId\":{\"$ref\":\"#/definitions/bundleId\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this account.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this account.\"},\"bundles\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\"},\"resources\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}\",\"method\":\"GET\"}]},\"bundleId\":{\"type\":\"integer\",\"description\":\"The bundle ID for this account.\"},\"accounts\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/account\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/accounts\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\",\"method\":\"GET\"}]}",
+					"text": "{\"name\":\"accounts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -3487,35 +2259,34 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "9bc8b8d2-0117-f4bb-4aa6-baa838b928d8",
-					"name": "schema+json_June 15",
+					"id": "e1e321b5-37eb-5240-e6e2-17bcda4de19d",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/accounts",
+						"name": "GET /metadata-catalog/accounts",
 						"description": "Getting decription of account resource metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/accounts",
+						"url": "{{accounts_gk}}/metadata-catalog/accounts",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: Bearer e97383098ad0c3a75b52189fea8fcc33523dda33a48964e778dd755579b59e53\nContent-Type: application/schema+json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Accounts metadata OK\"] = data.name === \"accounts\";\n",
 						"isFromCollection": true,
-						"write": true,
 						"version": 2,
 						"id": "87ddd2f3-3bca-26d5-fdf9-41ac85c7f793",
 						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Accounts metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
-							"activeRequestTab": "headers",
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -3531,10 +2302,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012648459,
+			"time": 1435172367505,
 			"name": "GET /accounts/metadata-catalog/resources",
 			"description": "Getting decription of resources metadata catalog in accounts JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -3546,30 +2317,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 930,
+					"time": 325,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "399",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 15 Jun 2015 17:40:07 GMT",
+							"value": "Wed, 24 Jun 2015 18:59:15 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -3583,12 +2354,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -3605,128 +2370,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "895",
+							"value": "889",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{id}/resources\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "parsed",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "86f0a37f-1fb1-3109-9096-31f18355ba43",
-					"name": "application/json June 15",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of resources metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/resources",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "8dbb0aad-0b54-d908-748d-de4b264aecf4",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 185,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 15 Jun 2015 18:43:05 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "894",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"accountId\":{\"$ref\":\"#/definitions/accountId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]},\"accountId\":{\"type\":\"integer\",\"description\":\"The ID for the account.\"},\"bundles\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/bundle\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/bundles\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/{#/definitions/accountId}/bundles\",\"method\":\"GET\"}]}",
+					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{id}/resources\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -3740,18 +2390,18 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "8994b158-69a9-cd68-cfc1-4370d3488b7d",
-					"name": "schema+json June 15",
+					"id": "ed69e273-00ba-6a39-3ab1-bb47f2a72147",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of resources metadata catalog in accounts",
-						"url": "{{base_url}}/admin/v1/accounts/metadata-catalog/bundles",
+						"name": "GET /accounts/metadata-catalog/resources",
+						"description": "Getting decription of resources metadata catalog in accounts JSON",
+						"url": "{{accounts_gk}}/accounts/metadata-catalog/resources",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 						"isFromCollection": true,
 						"version": 2,
 						"id": "8dbb0aad-0b54-d908-748d-de4b264aecf4",
@@ -3759,15 +2409,15 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Resources metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
-							"activeRequestTab": "headers",
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -3775,30 +2425,21 @@
 		},
 		{
 			"id": "9448a4dd-6dc1-1c49-3b90-ffa8da921d11",
-			"name": "GET /admin (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "Getting version data for Accounts",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/admin",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.items[0].version === \"v1\";\ntests[\"Lifecycle acive\"] = data.items[0].lifecycle === \"active\";\ntests[\"Latest true\"] = data.items[0].isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6776308,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:21:57.000Z",
-			"updatedAt": "2015-05-29T19:53:25.000Z",
+			"helperAttributes": {},
+			"time": 1435171059493,
+			"name": "GET /admin (version)",
+			"description": "Getting version data for Accounts",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-			"synced": false,
 			"responses": [
 				{
 					"status": "",
@@ -3915,7 +2556,8 @@
 						"sentFromTab": "1e28fb72-3f47-dfaf-089a-0bb6ce92b1f4"
 					}
 				}
-			]
+			],
+			"synced": false
 		},
 		{
 			"id": "9d88064d-ee6d-4291-81e6-c7248d341b21",
@@ -3927,10 +2569,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012665817,
+			"time": 1435172403063,
 			"name": "GET /bundles/metadata-catalog/resources",
 			"description": "Getting decription of bundles' resources metadata catalog JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -3942,30 +2584,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 117,
+					"time": 561,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "396",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/vnd.oracle.resource+json; type=singular",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 20:50:57 GMT",
+							"value": "Wed, 24 Jun 2015 19:04:05 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -3979,12 +2621,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -4001,13 +2637,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "897",
+							"value": "881",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"resource\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this resource.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this resource.\"},\"resourceType\":{\"type\":\"string\",\"description\":\"The type of resource.\"},\"bundleId\":{\"$ref\":\"#/definitions/bundleId\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/resources/{id}\",\"method\":\"GET\"}]},\"bundleId\":{\"type\":\"integer\",\"description\":\"The bundle ID for this account.\"},\"resources\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/collectionPagedResource\"}],\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/resource\"}}}}},\"allOf\":[{\"$ref\":\"#/definitions/resources\"}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}/resources\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{#/definitions/bundleId}/resources\",\"method\":\"GET\"}]}",
+					"text": "{\"name\":\"resources\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/metadata-catalog/resources\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/metadata-catalog/resources\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/{id}/resources\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -4021,18 +2657,18 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "8fc88643-2a58-66c0-b226-0c982a53e521",
+					"id": "a26afef5-b7f4-08fc-f6e4-7070340cc417",
 					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/bundles",
-						"description": "Getting decription of bundles' resources metadata catalog",
-						"url": "{{base_url}}/admin/v1/bundles/metadata-catalog/resources",
+						"name": "GET /bundles/metadata-catalog/resources",
+						"description": "Getting decription of bundles' resources metadata catalog JSON",
+						"url": "{{accounts_gk}}/bundles/metadata-catalog/resources",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/schema+json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
 						"dataMode": "params",
 						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Resources metadata OK\"] = data.name === \"resources\";",
 						"isFromCollection": true,
 						"version": 2,
 						"id": "9d88064d-ee6d-4291-81e6-c7248d341b21",
@@ -4040,14 +2676,15 @@
 						"currentHelper": "normal",
 						"helperAttributes": {},
 						"testResults": {
-							"Status code is 200 OK": true
+							"Status code is 200 OK": true,
+							"Resources metadata OK": true
 						},
 						"testErrors": null,
 						"uiState": {
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "1e28fb72-3f47-dfaf-089a-0bb6ce92b1f4"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
@@ -4199,113 +2836,122 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Bundles metadata OK\"] = data.name === \"bundles\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012599634,
+			"time": 1435172283237,
 			"name": "GET /accounts/metadata-catalog/bundles",
 			"description": "Getting decription of bundle resource metadata catalog JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
-					"owner": "50432",
-					"lastUpdatedBy": "50432",
-					"lastRevision": 7142788,
-					"request": {
-						"url": "{{base_url}}/admin/v1/metadata-catalog/bundles",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"version": 2
-					},
-					"id": "49641aea-a0bd-c69d-71ae-a368c5f680a8",
-					"name": "Sample June 1, 2015",
 					"status": "",
 					"responseCode": {
 						"code": 200,
-						"name": "OK"
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": "86",
+					"time": 495,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
+							"value": "close",
+							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": ""
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "391",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
-							"description": ""
+							"value": "application/vnd.oracle.resource+json; type=singular",
+							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 01 Jun 2015 18:17:16 GMT",
-							"description": ""
+							"value": "Wed, 24 Jun 2015 18:57:42 GMT",
+							"description": "The date and time that the message was sent"
 						},
 						{
 							"name": "Server",
 							"key": "Server",
 							"value": "nginx/1.4.2",
-							"description": ""
+							"description": "A name for the server"
 						},
 						{
 							"name": "Status",
 							"key": "Status",
 							"value": "200 OK",
-							"description": ""
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-Content-Type-Options",
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
-							"description": ""
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
 						},
 						{
 							"name": "X-RateLimit-Limit",
 							"key": "X-RateLimit-Limit",
 							"value": "900",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "900",
-							"description": ""
+							"value": "892",
+							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles\"}]}",
+					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://public-api.vitrue.com/admin/v1/accounts/{id}/bundles\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
 						"size": "normal"
 					},
 					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": "{\"url\":\"{{base_url}}/admin/v1/metadata-catalog/bundles\",\"pathVariables\":{},\"data\":[],\"headers\":\"Authorization: {{auth_token}}\\nContent-Type: application/json\\n\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"//Verifying response code\\ntests[\\\"Status code is 200 OK\\\"] = responseCode.code === 200;\\n\\n//Verifying response data\\n\",\"version\":2}",
-					"createdAt": "2015-06-01T18:18:26.000Z",
-					"updatedAt": "2015-06-01T18:18:26.000Z",
-					"write": true
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "ee627709-dd73-ba29-708a-4a83f540f5ff",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/metadata-catalog/bundles",
+						"description": "Getting decription of bundle resource metadata catalog JSON",
+						"url": "{{accounts_gk}}/accounts/metadata-catalog/bundles",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\nAccept: application/json\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "a91dd809-7864-4e67-fb61-9f3fec3a88bb",
+						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
 			"synced": false
@@ -4320,10 +2966,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Publish metadata OK\"] = data.items[0].name === \"posts\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012737181,
+			"time": 1435173260459,
 			"name": "GET /metadata-catalog (Publish)",
 			"description": "Getting metadata for Publish",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -4714,129 +3360,133 @@
 		},
 		{
 			"id": "f1184b01-c2c2-cffe-08b8-484907c4021b",
-			"name": "GET /admin/v1 (version)",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "Getting version data for Accounts",
 			"headers": "Authorization: {{auth_token}}\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "{{base_url}}/admin/v1",
 			"preRequestScript": "",
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"version": 2,
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.version === \"v1\";\ntests[\"Lifecycle acive\"] = data.lifecycle === \"active\";\ntests[\"Latest true\"] = data.isLatest === true;",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"owner": "49600",
-			"lastUpdatedBy": "50432",
-			"lastRevision": 6776330,
-			"history": null,
-			"folder": null,
-			"createdAt": "2015-05-29T19:21:58.000Z",
-			"updatedAt": "2015-05-29T19:53:37.000Z",
+			"helperAttributes": {},
+			"time": 1435171105820,
+			"name": "GET /admin/v1 (version)",
+			"description": "Getting version data for Accounts",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 			"responses": [
 				{
-					"owner": "50432",
-					"lastUpdatedBy": "50432",
-					"lastRevision": 7129872,
-					"request": {
-						"url": "https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: {{auth_token}}\nContent-Type: application/json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"version": 2
-					},
-					"id": "f5a9f1c0-a415-8188-0594-013baae37fe0",
-					"name": "Sample Response",
 					"status": "",
 					"responseCode": {
 						"code": 200,
-						"name": "OK"
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": "140",
+					"time": 354,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
-							"description": ""
+							"value": "close",
+							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": ""
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "238",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
-							"description": ""
+							"value": "application/vnd.oracle.resource+json; type=singular",
+							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 01 Jun 2015 17:25:45 GMT",
-							"description": ""
+							"value": "Wed, 24 Jun 2015 18:40:46 GMT",
+							"description": "The date and time that the message was sent"
 						},
 						{
 							"name": "Server",
 							"key": "Server",
 							"value": "nginx/1.4.2",
-							"description": ""
+							"description": "A name for the server"
 						},
 						{
 							"name": "Status",
 							"key": "Status",
 							"value": "200 OK",
-							"description": ""
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-Content-Type-Options",
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
-							"description": ""
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
 						},
 						{
 							"name": "X-RateLimit-Limit",
 							"key": "X-RateLimit-Limit",
 							"value": "900",
-							"description": ""
+							"description": "Custom header"
 						},
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "896",
-							"description": ""
+							"value": "899",
+							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"accounts\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts\"}]}",
+					"text": "{\"version\":\"v1\",\"lifecycle\":\"active\",\"isLatest\":true,\"catalog\":{\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/metadata-catalog\"}]},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
 						"size": "normal"
 					},
 					"previewType": "html",
-					"searchResultScrolledTo": "-1",
-					"version": null,
-					"requestObject": "{\"url\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/accounts\",\"pathVariables\":{},\"data\":[],\"headers\":\"Authorization: {{auth_token}}\\nContent-Type: application/json\\n\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"//Verifying response code\\ntests[\\\"Status code is 200 OK\\\"] = responseCode.code === 200;\\n\\n//Verifying response data\\n\",\"version\":2}",
-					"createdAt": "2015-06-01T17:27:04.000Z",
-					"updatedAt": "2015-06-01T17:27:04.000Z",
-					"write": true
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "1bc4b05d-3d99-7e43-a3bc-e584e3c36eee",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /admin/v1 (version)",
+						"description": "Getting version data for Accounts",
+						"url": "{{base_url}}/admin/v1",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Version v1\"] = data.version === \"v1\";\ntests[\"Lifecycle acive\"] = data.lifecycle === \"active\";\ntests[\"Latest true\"] = data.isLatest === true;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "f1184b01-c2c2-cffe-08b8-484907c4021b",
+						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true,
+							"Version v1": true,
+							"Lifecycle acive": true,
+							"Latest true": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						},
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
+					}
 				}
 			],
 			"synced": false
@@ -4851,10 +3501,10 @@
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
+			"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\nvar data = JSON.parse(responseBody);\ntests[\"Posts metadata OK\"] = data.name === \"posts\";",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1435012747505,
+			"time": 1435173297120,
 			"name": "GET /metadata-catalog/posts",
 			"description": "Getting metadata for posts Publish JSON",
 			"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
@@ -5002,30 +3652,30 @@
 						"name": "OK",
 						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
 					},
-					"time": 94,
+					"time": 488,
 					"headers": [
 						{
 							"name": "Connection",
 							"key": "Connection",
-							"value": "keep-alive",
+							"value": "close",
 							"description": "Options that are desired for the connection"
 						},
 						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "732",
+							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
 							"name": "Content-Type",
 							"key": "Content-Type",
-							"value": "application/json",
+							"value": "application/schema+json",
 							"description": "The mime type of this content"
 						},
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:11:32 GMT",
+							"value": "Wed, 24 Jun 2015 18:57:14 GMT",
 							"description": "The date and time that the message was sent"
 						},
 						{
@@ -5039,12 +3689,6 @@
 							"key": "Status",
 							"value": "200 OK",
 							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
 						},
 						{
 							"name": "X-Content-Type-Options",
@@ -5061,13 +3705,13 @@
 						{
 							"name": "X-RateLimit-Remaining",
 							"key": "X-RateLimit-Remaining",
-							"value": "900",
+							"value": "893",
 							"description": "Custom header"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"name\":\"bundles\",\"links\":[{\"rel\":\"alternate\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/schema+json\"},{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/metadata-catalog/bundles\",\"mediaType\":\"application/json\"},{\"rel\":\"describes\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles\"}]}",
+					"text": "{\"$schema\":\"https://public-api.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://public-api.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"resources\":{\"$ref\":\"https://public-api.vitrue.com/admin/v1/bundles/metadata-catalog/resources\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://public-api.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/bundle\"}]}",
 					"language": "javascript",
 					"rawDataType": "text",
 					"state": {
@@ -5081,21 +3725,21 @@
 					"isSample": true,
 					"scrollToResult": true,
 					"runTests": true,
-					"id": "fc29ad4d-ca75-2bf3-8c1d-2e8db5222d6a",
-					"name": "application/json June 16",
+					"id": "f8dd9065-eddd-caaf-32a2-455fd6c0d995",
+					"name": "Sample response",
 					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of bundles metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/bundles",
+						"name": "GET /metadata-catalog/bundles(schema)",
+						"description": "Getting description of bundles metadata catalog SCHEMA+JSON",
+						"url": "{{accounts_gk}}/metadata-catalog/bundles",
 						"pathVariables": {},
 						"data": [],
-						"headers": "Authorization: Bearer aae3e4f36cf311ceacfe652d3df060f3d297f6403bc00bba651c24825a212218\nContent-Type: application/json\n",
+						"headers": "Authorization: {{auth_token}}\nAccept: application/schema+json\n",
 						"dataMode": "params",
 						"method": "GET",
 						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
 						"isFromCollection": true,
 						"version": 2,
-						"id": "86341fb8-15fc-6302-1ce8-f6edefc9424c",
+						"id": "fd7a4e0e-a3c0-f1f9-3c0a-cadeefe8bd7f",
 						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
 						"currentHelper": "normal",
 						"helperAttributes": {},
@@ -5104,127 +3748,10 @@
 						},
 						"testErrors": null,
 						"uiState": {
-							"activeRequestTab": "headers",
 							"waitingForInterceptorResponse": false,
 							"waitingForResponse": false
 						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 566,
-					"headers": [
-						{
-							"name": "Connection",
-							"key": "Connection",
-							"value": "keep-alive",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"name": "Content-Encoding",
-							"key": "Content-Encoding",
-							"value": "gzip",
-							"description": "The type of encoding used on the data."
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 16 Jun 2015 13:27:57 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "nginx/1.4.2",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Status",
-							"key": "Status",
-							"value": "200 OK",
-							"description": "Custom header"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"name": "X-RateLimit-Limit",
-							"key": "X-RateLimit-Limit",
-							"value": "900",
-							"description": "Custom header"
-						},
-						{
-							"name": "X-RateLimit-Remaining",
-							"key": "X-RateLimit-Remaining",
-							"value": "900",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"$schema\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema\",\"definitions\":{\"bundle\":{\"allOf\":[{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/oraschema#/definitions/singularResource\"}],\"properties\":{\"id\":{\"type\":\"integer\",\"description\":\"The id for this bundle.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this bundle.\"},\"description\":{\"type\":\"string\",\"description\":\"The description of this bundle.\"},\"resources\":{\"$ref\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/metadata-catalog/resources\"}},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/{id}\",\"method\":\"GET\"}]}},\"allOf\":[{\"$ref\":\"#/definitions/bundle\"}]}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"state": {
-						"size": "normal"
-					},
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"isSample": true,
-					"scrollToResult": true,
-					"runTests": true,
-					"id": "b161ca2c-17b4-9ef7-dea7-817d0ef71bc2",
-					"name": "schema+json June 16",
-					"request": {
-						"name": "GET /admin/v1/metadata-catalog/resources",
-						"description": "Getting decription of bundles metadata catalog",
-						"url": "{{base_url}}/admin/v1/metadata-catalog/bundles",
-						"pathVariables": {},
-						"data": [],
-						"headers": "Authorization: Bearer aae3e4f36cf311ceacfe652d3df060f3d297f6403bc00bba651c24825a212218\nContent-Type: application/schema+json\n",
-						"dataMode": "params",
-						"method": "GET",
-						"tests": "//Verifying response code\ntests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\n//Verifying response data\n",
-						"isFromCollection": true,
-						"version": 2,
-						"id": "86341fb8-15fc-6302-1ce8-f6edefc9424c",
-						"collectionId": "70a47ae9-a51b-756a-9cf8-62dd1425e119",
-						"currentHelper": "normal",
-						"helperAttributes": {},
-						"testResults": {
-							"Status code is 200 OK": true
-						},
-						"testErrors": null,
-						"uiState": {
-							"activeRequestTab": "headers",
-							"waitingForInterceptorResponse": false,
-							"waitingForResponse": false
-						},
-						"sentFromTab": "772c43ed-1e9f-b502-5b48-1abcfde5bdc0"
+						"sentFromTab": "f8853f37-7801-e7d2-293f-32d93a9784df"
 					}
 				}
 			],
