@@ -1,0 +1,1657 @@
+{
+	"id": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+	"name": "API ACCOUNTS",
+	"description": "Collection of Public API endpoints for Accounts",
+	"order": [
+		"b51e29fd-6a8a-8ed9-d48d-09e24596ed2c",
+		"040c4668-b1cd-8774-1cc2-8ca034a9fd4e",
+		"3a0031b0-8995-e9b1-f5e7-138cf1cf8652",
+		"65c2ea50-aa5e-28da-588b-18f75c7e3902",
+		"244efd33-c7e6-0e7c-5847-5c7e4a6de248",
+		"ff69b35e-0ca8-9189-0259-8048cf951350",
+		"657c8898-5d3b-56ee-87ea-7a7608182c01",
+		"30a8e44b-a79c-ebd6-0810-17c243948821",
+		"96c5cc19-b238-1c36-143c-218b714b3974",
+		"8703e518-2574-0edf-6820-81d7b1071eba",
+		"40a08d34-f61f-622a-edc2-505d375fdaee",
+		"357ff2cd-70cd-c8e2-3c24-e6bc9d538b24"
+	],
+	"folders": [],
+	"timestamp": 0,
+	"owner": "49600",
+	"remoteLink": "https://www.getpostman.com/collections/61bf5e1b214a3593f69d",
+	"public": false,
+	"createdAt": "2015-05-28T21:23:17.000Z",
+	"updatedAt": "2015-05-28T21:36:46.000Z",
+	"hasRequests": true,
+	"synced": false,
+	"requests": [
+		{
+			"id": "040c4668-b1cd-8774-1cc2-8ca034a9fd4e",
+			"name": "GET /accounts?totalResults",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting accounts list (total)",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts?total_results=true",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512611,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:51.000Z",
+			"updatedAt": "2015-05-28T21:23:18.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1507,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5408",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:37:01 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "889",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"name\":\"#2 ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"}],\"bundleId\":4398},{\"name\":\"#3 ENGAGE enabled account\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"}],\"bundleId\":4548},{\"name\":\"#ODC QA acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"}],\"bundleId\":5437},{\"name\":\"#zerotolerance\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"}],\"bundleId\":5034},{\"name\":\"All features QA Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"}],\"bundleId\":5578},{\"name\":\"Broker Apps Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"}],\"bundleId\":10650},{\"name\":\"broker_qa\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"}],\"bundleId\":7265},{\"name\":\"ENGAGE SHARDING QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"}],\"bundleId\":9424},{\"name\":\"Engage Sharding QA test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"}],\"bundleId\":10208},{\"name\":\"Engage-Listen-Integrated-Acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"}],\"bundleId\":7201},{\"name\":\"ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"}],\"bundleId\":4387},{\"name\":\"ENGAGE_ONLY_ACCT #3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"}],\"bundleId\":4419},{\"name\":\"Legacy_Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"}],\"bundleId\":8228},{\"name\":\"Lisa Yu\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"}],\"bundleId\":8770},{\"name\":\"NEW SHARD QA TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"}],\"bundleId\":9488},{\"name\":\"NEW-QA-UCF-STAGE\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"}],\"bundleId\":5902},{\"name\":\"ODC-ENGAGE ACCT \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"}],\"bundleId\":8532},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"}],\"bundleId\":1843},{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"bundleId\":9059},{\"name\":\"QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"}],\"bundleId\":4341}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?total_results=true\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?total_results=true&offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "addff3f0-a0f5-6a62-ae64-643ca9c218ef",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts total",
+						"description": "Getting accounts list (total)",
+						"url": "{{accounts_gk}}/accounts?total_results=true",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "040c4668-b1cd-8774-1cc2-8ca034a9fd4e",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "244efd33-c7e6-0e7c-5847-5c7e4a6de248",
+			"name": "GET /accounts?offset=1",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "get accounts excluding the first one",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts?offset=1",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512617,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:52.000Z",
+			"updatedAt": "2015-05-28T21:23:18.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1087,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5487",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:37:41 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "886",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"name\":\"#3 ENGAGE enabled account\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"}],\"bundleId\":4548},{\"name\":\"#ODC QA acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"}],\"bundleId\":5437},{\"name\":\"#zerotolerance\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"}],\"bundleId\":5034},{\"name\":\"All features QA Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"}],\"bundleId\":5578},{\"name\":\"Broker Apps Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"}],\"bundleId\":10650},{\"name\":\"broker_qa\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"}],\"bundleId\":7265},{\"name\":\"ENGAGE SHARDING QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"}],\"bundleId\":9424},{\"name\":\"Engage Sharding QA test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"}],\"bundleId\":10208},{\"name\":\"Engage-Listen-Integrated-Acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"}],\"bundleId\":7201},{\"name\":\"ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"}],\"bundleId\":4387},{\"name\":\"ENGAGE_ONLY_ACCT #3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"}],\"bundleId\":4419},{\"name\":\"Legacy_Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"}],\"bundleId\":8228},{\"name\":\"Lisa Yu\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"}],\"bundleId\":8770},{\"name\":\"NEW SHARD QA TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"}],\"bundleId\":9488},{\"name\":\"NEW-QA-UCF-STAGE\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"}],\"bundleId\":5902},{\"name\":\"ODC-ENGAGE ACCT \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"}],\"bundleId\":8532},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"}],\"bundleId\":1843},{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"bundleId\":9059},{\"name\":\"QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"}],\"bundleId\":4341},{\"name\":\"QA DBInbox acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9454\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9454\"}],\"bundleId\":9454}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?offset=1\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?offset=21&limit=20\"},{\"rel\":\"prev\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?offset=0&limit=20\"}],\"offset\":1}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "c02e4b2d-d035-0974-0120-3e5a66fbf301",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts?offset=1",
+						"description": "get accounts excluding the first one",
+						"url": "{{accounts_gk}}/accounts?offset=1",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "244efd33-c7e6-0e7c-5847-5c7e4a6de248",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "30a8e44b-a79c-ebd6-0810-17c243948821",
+			"name": "GET /bundles/:bundle_id/",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting bundle info(no subbundles)",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/bundles/{{bundle_id}}",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512624,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:52.000Z",
+			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 179,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "247",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=singular",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:38:15 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "883",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"id\":9059}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "679815ce-cf04-11b7-df96-1b53ad2dbeda",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /bundles/:bundle_id/",
+						"description": "Getting bundle info(no subbundles)",
+						"url": "{{accounts_gk}}/bundles/{{bundle_id}}",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "30a8e44b-a79c-ebd6-0810-17c243948821",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "357ff2cd-70cd-c8e2-3c24-e6bc9d538b24",
+			"name": "GET /resources/:resourceId",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting resources based on `resourceId`",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/resources/{{insta_resource_id}}",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512630,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:53.000Z",
+			"updatedAt": "2015-05-28T21:23:19.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 404,
+						"name": "Not Found",
+						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+					},
+					"time": 134,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "281",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=error",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:39:06 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "404 Not Found",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Cascade",
+							"key": "X-Cascade",
+							"value": "pass",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "879",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"type\":\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5\",\"title\":\"Unknown url/method combination.\",\"detail\":\"The desired route [https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66099] is not available for the specified HTTP method [GET].\",\"status\":404}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "6b331ed6-e172-1377-2528-ec8baff2070f",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /resources/:resourceId",
+						"description": "Getting resources based on `resourceId`",
+						"url": "{{accounts_gk}}/resources/{{insta_resource_id}}",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "357ff2cd-70cd-c8e2-3c24-e6bc9d538b24",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": false
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "3a0031b0-8995-e9b1-f5e7-138cf1cf8652",
+			"name": "GET /accounts?limit=100",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Returns up to 100 accounts",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts?limit=100",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512642,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:54.000Z",
+			"updatedAt": "2015-05-28T21:23:20.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1671,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "9042",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:37:14 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "888",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":35,\"hasMore\":false,\"items\":[{\"name\":\"#2 ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"}],\"bundleId\":4398},{\"name\":\"#3 ENGAGE enabled account\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"}],\"bundleId\":4548},{\"name\":\"#ODC QA acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"}],\"bundleId\":5437},{\"name\":\"#zerotolerance\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"}],\"bundleId\":5034},{\"name\":\"All features QA Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"}],\"bundleId\":5578},{\"name\":\"Broker Apps Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"}],\"bundleId\":10650},{\"name\":\"broker_qa\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"}],\"bundleId\":7265},{\"name\":\"ENGAGE SHARDING QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"}],\"bundleId\":9424},{\"name\":\"Engage Sharding QA test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"}],\"bundleId\":10208},{\"name\":\"Engage-Listen-Integrated-Acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"}],\"bundleId\":7201},{\"name\":\"ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"}],\"bundleId\":4387},{\"name\":\"ENGAGE_ONLY_ACCT #3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"}],\"bundleId\":4419},{\"name\":\"Legacy_Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"}],\"bundleId\":8228},{\"name\":\"Lisa Yu\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"}],\"bundleId\":8770},{\"name\":\"NEW SHARD QA TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"}],\"bundleId\":9488},{\"name\":\"NEW-QA-UCF-STAGE\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"}],\"bundleId\":5902},{\"name\":\"ODC-ENGAGE ACCT \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"}],\"bundleId\":8532},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"}],\"bundleId\":1843},{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"bundleId\":9059},{\"name\":\"QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"}],\"bundleId\":4341},{\"name\":\"QA DBInbox acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9454\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9454\"}],\"bundleId\":9454},{\"name\":\"QA Internal Test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4343\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4343\"}],\"bundleId\":4343},{\"name\":\"QA OCCN - Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5579\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5579\"}],\"bundleId\":5579},{\"name\":\"QA ODC Staging acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5576\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5576\"}],\"bundleId\":5576},{\"name\":\"QA SHARDING 2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9426\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9426\"}],\"bundleId\":9426},{\"name\":\"QA Solr acct \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9453\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9453\"}],\"bundleId\":9453},{\"name\":\"SHARDING QA 3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9437\"}],\"bundleId\":9437},{\"name\":\"SSO Testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4344\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4344\"}],\"bundleId\":4344},{\"name\":\"Staging_Bobby\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1185\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1185\"}],\"bundleId\":1185},{\"name\":\"Staging_Lacey\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5487\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5487\"}],\"bundleId\":5487},{\"name\":\"Staging_Wai-Leong\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1181\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1181\"}],\"bundleId\":1181},{\"name\":\"SW LI Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7640\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7640\"}],\"bundleId\":7640},{\"name\":\"UCF QA ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5740\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5740\"}],\"bundleId\":5740},{\"name\":\"UCF-staging-QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5635\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5635\"}],\"bundleId\":5635},{\"name\":\"Vitrue_David_B\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8839\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8839\"}],\"bundleId\":8839}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?limit=100\"}],\"limit\":100}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "9d55078b-6b03-cf5d-a566-2ee091c173d3",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts?limit=100",
+						"description": "Returns up to 100 accounts",
+						"url": "{{accounts_gk}}/accounts?limit=100",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "3a0031b0-8995-e9b1-f5e7-138cf1cf8652",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "40a08d34-f61f-622a-edc2-505d375fdaee",
+			"name": "GET /accounts/:account_id/resources?page=1",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting resources belonging to an account. First page only",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources?page=1",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512650,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:54.000Z",
+			"updatedAt": "2015-05-28T21:23:20.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 3441,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5503",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:38:58 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "880",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"id\":68059,\"name\":\"Analytics1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"}]},{\"id\":91044,\"name\":\"ArtLife\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"}]},{\"id\":66093,\"name\":\"audi\",\"resourceType\":\"facebook_public\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"}]},{\"id\":66092,\"name\":\"Baramubara\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"}]},{\"id\":66091,\"name\":\"Bazaaaaaaaaar QA\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"}]},{\"id\":66098,\"name\":\"Brookstrut Showcase\",\"resourceType\":\"linkedin\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"}]},{\"id\":92550,\"name\":\"CI topic status test\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"}]},{\"id\":71679,\"name\":\"ckanani\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"}]},{\"id\":71149,\"name\":\"Dev Testers\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"}]},{\"id\":87639,\"name\":\"erushing78\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"}]},{\"id\":73295,\"name\":\"iTest\",\"resourceType\":\"google_plus\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"}]},{\"id\":71139,\"name\":\"MyPage1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"}]},{\"id\":90302,\"name\":\"NEW topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"}]},{\"id\":89265,\"name\":\"Oracle_Cloud\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"}]},{\"id\":87263,\"name\":\"socialqa.us\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"}]},{\"id\":89266,\"name\":\"swsocialnameus\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"}]},{\"id\":87260,\"name\":\"Yuriy API topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"}]},{\"id\":66094,\"name\":\"YuriySocial\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"}]},{\"id\":66095,\"name\":\"yuriytest1\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"}]},{\"id\":66097,\"name\":\"yuriytest3\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources?page=1\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources?page=1&offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "2ee89acf-2bd9-57d5-0796-5e9eddfad773",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/:account_id/resources?page=1",
+						"description": "Getting resources belonging to an account. First page only",
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources?page=1",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "40a08d34-f61f-622a-edc2-505d375fdaee",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "657c8898-5d3b-56ee-87ea-7a7608182c01",
+			"name": "GET /accounts/:bundle_id/resources",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting bundle including sub-bundles info",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512660,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:55.000Z",
+			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 506,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "971",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:38:07 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "884",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"hasMore\":false,\"items\":[{\"name\":\"API_BUNDLE_1\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"}],\"id\":9062},{\"name\":\"API_BUNDLE_2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"}],\"id\":9063},{\"name\":\"API_subbundle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"}],\"id\":9064}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "e350c6de-65ed-d08c-0032-fadcf2953f09",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/:bundle_id/resources",
+						"description": "Getting bundle including sub-bundles info",
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "657c8898-5d3b-56ee-87ea-7a7608182c01",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "65c2ea50-aa5e-28da-588b-18f75c7e3902",
+			"name": "GET /accounts?page=1",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Returns paginated(e.g. from page1) accounts",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts?page=1",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512667,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:56.000Z",
+			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1127,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5384",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:37:34 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "887",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"name\":\"#2 ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4398\"}],\"bundleId\":4398},{\"name\":\"#3 ENGAGE enabled account\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4548\"}],\"bundleId\":4548},{\"name\":\"#ODC QA acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5437\"}],\"bundleId\":5437},{\"name\":\"#zerotolerance\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5034\"}],\"bundleId\":5034},{\"name\":\"All features QA Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5578\"}],\"bundleId\":5578},{\"name\":\"Broker Apps Staging\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10650\"}],\"bundleId\":10650},{\"name\":\"broker_qa\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7265\"}],\"bundleId\":7265},{\"name\":\"ENGAGE SHARDING QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9424\"}],\"bundleId\":9424},{\"name\":\"Engage Sharding QA test\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/10208\"}],\"bundleId\":10208},{\"name\":\"Engage-Listen-Integrated-Acct\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/7201\"}],\"bundleId\":7201},{\"name\":\"ENGAGE_ONLY_ACCT\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4387\"}],\"bundleId\":4387},{\"name\":\"ENGAGE_ONLY_ACCT #3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4419\"}],\"bundleId\":4419},{\"name\":\"Legacy_Engage\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8228\"}],\"bundleId\":8228},{\"name\":\"Lisa Yu\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8770\"}],\"bundleId\":8770},{\"name\":\"NEW SHARD QA TEST\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9488\"}],\"bundleId\":9488},{\"name\":\"NEW-QA-UCF-STAGE\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/5902\"}],\"bundleId\":5902},{\"name\":\"ODC-ENGAGE ACCT \",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/8532\"}],\"bundleId\":8532},{\"name\":\"Oracle QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/1843\"}],\"bundleId\":1843},{\"name\":\"Public API testing\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059\"}],\"bundleId\":9059},{\"name\":\"QA\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/4341\"}],\"bundleId\":4341}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?page=1\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts?page=1&offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "68f39429-fc7d-d478-6106-8f08c021bb87",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts?page=1",
+						"description": "Returns paginated(e.g. from page1) accounts",
+						"url": "{{accounts_gk}}/accounts?page=1",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "65c2ea50-aa5e-28da-588b-18f75c7e3902",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "8703e518-2574-0edf-6820-81d7b1071eba",
+			"name": "GET /accounts/:account_id/resources",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting resources belonging to an account",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512672,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:56.000Z",
+			"updatedAt": "2015-05-28T21:23:21.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 3033,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5489",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:38:45 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "881",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"id\":68059,\"name\":\"Analytics1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"}]},{\"id\":91044,\"name\":\"ArtLife\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"}]},{\"id\":66093,\"name\":\"audi\",\"resourceType\":\"facebook_public\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"}]},{\"id\":66092,\"name\":\"Baramubara\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"}]},{\"id\":66091,\"name\":\"Bazaaaaaaaaar QA\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"}]},{\"id\":66098,\"name\":\"Brookstrut Showcase\",\"resourceType\":\"linkedin\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"}]},{\"id\":92550,\"name\":\"CI topic status test\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"}]},{\"id\":71679,\"name\":\"ckanani\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"}]},{\"id\":71149,\"name\":\"Dev Testers\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"}]},{\"id\":87639,\"name\":\"erushing78\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"}]},{\"id\":73295,\"name\":\"iTest\",\"resourceType\":\"google_plus\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"}]},{\"id\":71139,\"name\":\"MyPage1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"}]},{\"id\":90302,\"name\":\"NEW topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"}]},{\"id\":89265,\"name\":\"Oracle_Cloud\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"}]},{\"id\":87263,\"name\":\"socialqa.us\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"}]},{\"id\":89266,\"name\":\"swsocialnameus\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"}]},{\"id\":87260,\"name\":\"Yuriy API topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"}]},{\"id\":66094,\"name\":\"YuriySocial\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"}]},{\"id\":66095,\"name\":\"yuriytest1\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"}]},{\"id\":66097,\"name\":\"yuriytest3\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/resources?offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "30f4db33-2f61-1dfc-d751-b30db8d2077e",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/:account_id/resources",
+						"description": "Getting resources belonging to an account",
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/resources",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "8703e518-2574-0edf-6820-81d7b1071eba",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "96c5cc19-b238-1c36-143c-218b714b3974",
+			"name": "GET /bundles/:bundle_id/resources",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting resources for specific bundle",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/bundles/{{bundle_id}}/resources",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512683,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:57.000Z",
+			"updatedAt": "2015-05-28T21:23:22.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"synced": false,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 800,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5486",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:38:31 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "882",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"id\":68059,\"name\":\"Analytics1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/68059\"}]},{\"id\":91044,\"name\":\"ArtLife\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/91044\"}]},{\"id\":66093,\"name\":\"audi\",\"resourceType\":\"facebook_public\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66093\"}]},{\"id\":66092,\"name\":\"Baramubara\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66092\"}]},{\"id\":66091,\"name\":\"Bazaaaaaaaaar QA\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66091\"}]},{\"id\":66098,\"name\":\"Brookstrut Showcase\",\"resourceType\":\"linkedin\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66098\"}]},{\"id\":92550,\"name\":\"CI topic status test\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/92550\"}]},{\"id\":71679,\"name\":\"ckanani\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71679\"}]},{\"id\":71149,\"name\":\"Dev Testers\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71149\"}]},{\"id\":87639,\"name\":\"erushing78\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87639\"}]},{\"id\":73295,\"name\":\"iTest\",\"resourceType\":\"google_plus\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/73295\"}]},{\"id\":71139,\"name\":\"MyPage1\",\"resourceType\":\"facebook\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/71139\"}]},{\"id\":90302,\"name\":\"NEW topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/90302\"}]},{\"id\":89265,\"name\":\"Oracle_Cloud\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89265\"}]},{\"id\":87263,\"name\":\"socialqa.us\",\"resourceType\":\"instagram\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87263\"}]},{\"id\":89266,\"name\":\"swsocialnameus\",\"resourceType\":\"sina_weibo\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/89266\"}]},{\"id\":87260,\"name\":\"Yuriy API topic\",\"resourceType\":\"listen_topic\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/87260\"}]},{\"id\":66094,\"name\":\"YuriySocial\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66094\"}]},{\"id\":66095,\"name\":\"yuriytest1\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66095\"}]},{\"id\":66097,\"name\":\"yuriytest3\",\"resourceType\":\"twitter\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/resources/66097\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059/resources\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059/resources\"},{\"rel\":\"next\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9059/resources?offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "2b0bc487-67d9-2b4f-5284-98a2f84f75ef",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /bundles/:bundle_id/resources",
+						"description": "Getting resources for specific bundle",
+						"url": "{{accounts_gk}}/bundles/{{bundle_id}}/resources",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "96c5cc19-b238-1c36-143c-218b714b3974",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "b51e29fd-6a8a-8ed9-d48d-09e24596ed2c",
+			"headers": "Authorization: {{auth_token}}\n",
+			"url": "{{accounts_gk}}/accounts",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;\n\nvar data = JSON.parse(responseBody);\ntests[\"Default count is 30\"] = data.count === 30;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1435016447551,
+			"name": "GET /accounts",
+			"description": "Getting accounts list",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
+			"name": "GET /accounts/:bundle_id/bundles",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "Getting bundle including sub-bundles info",
+			"headers": "Authorization: {{auth_token}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"owner": "49600",
+			"lastUpdatedBy": "49600",
+			"lastRevision": 6512709,
+			"history": null,
+			"folder": null,
+			"createdAt": "2015-05-21T02:02:56.000Z",
+			"updatedAt": "2015-05-28T21:23:24.000Z",
+			"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+			"responses": [
+				{
+					"owner": "49600",
+					"lastUpdatedBy": "49600",
+					"lastRevision": 6512717,
+					"request": {
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"version": 2
+					},
+					"id": "83f779bc-db16-48f1-79d4-6529cf226870",
+					"name": "id moved to top",
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": "2019",
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": ""
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "5212",
+							"description": ""
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 07 May 2015 19:24:27 GMT",
+							"description": ""
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": ""
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": ""
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": ""
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": ""
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "896",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"hasMore\":true,\"items\":[{\"id\":10261,\"name\":\"3\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10261\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10261\"}]},{\"id\":10265,\"name\":\"add #2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10265\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10265\"}]},{\"id\":9497,\"name\":\"Ants\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9497\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9497\"}]},{\"id\":9493,\"name\":\"Arachnids \",\"description\":\"Little 8-legged critters - creep me out\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9493\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9493\"}]},{\"id\":9042,\"name\":\"Baby Rex\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9042\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9042\"}]},{\"id\":7735,\"name\":\"Bald\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7735\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7735\"}]},{\"id\":7686,\"name\":\"Beagle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7686\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7686\"}]},{\"id\":7681,\"name\":\"Birds - rename\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7681\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7681\"}]},{\"id\":9526,\"name\":\"Black Widow\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9526\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9526\"}]},{\"id\":9528,\"name\":\"Brown Recluse\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9528\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9528\"}]},{\"id\":9885,\"name\":\"Bundle 12345\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9885\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9885\"}]},{\"id\":9884,\"name\":\"bundle bundle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9884\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9884\"}]},{\"id\":7683,\"name\":\"Calico\",\"description\":\"Words. So Many Words.\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7683\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7683\"}]},{\"id\":7690,\"name\":\"Callie\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7690\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7690\"}]},{\"id\":9742,\"name\":\"Caramel\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9742\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9742\"}]},{\"id\":10010,\"name\":\"Catchall\",\"description\":\"Here is some description\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10010\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/10010\"}]},{\"id\":7679,\"name\":\"Cats\",\"description\":\"Meow\",\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7679\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/7679\"}]},{\"id\":9649,\"name\":\"Chocolates\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9649\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9649\"}]},{\"id\":9747,\"name\":\"Coconut\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9747\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9747\"}]},{\"id\":9775,\"name\":\"Cordial Cherry\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9775\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/bundles/9775\"}]}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles\"},{\"rel\":\"self\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles\"},{\"rel\":\"next\",\"href\":\"https://srm-api.sandbox.cloud.vitrue.com/admin/v1/accounts/5487/bundles?offset=20&limit=20\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": "-1",
+					"version": null,
+					"requestObject": "{\"url\":\"{{accounts_gk}}/accounts/{{bundle_id}}/bundles\",\"pathVariables\":{},\"data\":[],\"headers\":\"Authorization: {{auth_token}}\\n\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"tests[\\\"Status code is 200 OK\\\"] = responseCode.code === 200;\",\"version\":2}",
+					"createdAt": "2015-05-27T15:32:06.000Z",
+					"updatedAt": "2015-05-28T21:23:24.000Z",
+					"write": true
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 433,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "971",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.oracle.resource+json; type=collection",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 09 Jun 2015 20:37:47 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx/1.4.2",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Status",
+							"key": "Status",
+							"value": "200 OK",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-RateLimit-Limit",
+							"key": "X-RateLimit-Limit",
+							"value": "900",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-RateLimit-Remaining",
+							"key": "X-RateLimit-Remaining",
+							"value": "885",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"hasMore\":false,\"items\":[{\"name\":\"API_BUNDLE_1\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9062\"}],\"id\":9062},{\"name\":\"API_BUNDLE_2\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9063\"}],\"id\":9063},{\"name\":\"API_subbundle\",\"description\":null,\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/bundles/9064\"}],\"id\":9064}],\"links\":[{\"rel\":\"canonical\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"},{\"rel\":\"self\",\"href\":\"https://srm-api.staging.cloud.vitrue.com/admin/v1/accounts/9059/bundles\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "3561aa45-1655-055e-0889-2258d4296910",
+					"name": "Sample response",
+					"request": {
+						"name": "GET /accounts/:bundle_id/bundles",
+						"description": "Getting bundle including sub-bundles info",
+						"url": "{{accounts_gk}}/accounts/{{bundle_id}}/bundles",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Authorization: {{auth_token}}\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "tests[\"Status code is 200 OK\"] = responseCode.code === 200;",
+						"isFromCollection": true,
+						"version": 2,
+						"id": "ff69b35e-0ca8-9189-0259-8048cf951350",
+						"collectionId": "ab5f9e70-e345-b13c-ce4e-2a4686d67f95",
+						"currentHelper": "normal",
+						"helperAttributes": {},
+						"testResults": {
+							"Status code is 200 OK": true
+						},
+						"testErrors": null,
+						"uiState": {
+							"waitingForInterceptorResponse": false,
+							"waitingForResponse": false
+						}
+					}
+				}
+			],
+			"synced": false
+		}
+	]
+}
